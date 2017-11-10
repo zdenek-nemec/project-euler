@@ -3,14 +3,32 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Project Euler's documentation!
-=========================================
+.. _index:
+
+===========================
+Zdenek versus Project Euler
+===========================
+
+My Project Euler solutions. Visit https://projecteuler.net/ for more
+information about Project Euler.
+
+Open
+====
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+    :maxdepth: 1
+    :glob:
 
+    /_modules/open_pe*
 
+Solved
+======
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    /_modules/pe*
 
 Indices and tables
 ==================

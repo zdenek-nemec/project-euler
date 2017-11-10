@@ -17,9 +17,9 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 # import os
-# import sys
+import sys
 # sys.path.insert(0, os.path.abspath('.'))
-
+sys.path.append('./pe001_multiples_of_3_and_5')
 
 # -- General configuration ------------------------------------------------
 
@@ -30,8 +30,7 @@
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.autodoc',
-    'sphinx.ext.mathjax']
+extensions = ['sphinx.ext.autodoc', 'sphinx.ext.mathjax']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -153,5 +152,6 @@ texinfo_documents = [
      'Miscellaneous'),
 ]
 
-
-
+html_sidebars = {
+   '**': ['localtoc.html', 'relations.html', 'sourcelink.html', 'searchbox.html'], 'using/windows': ['windowssidebar.html', 'searchbox.html'],
+}

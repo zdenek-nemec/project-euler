@@ -10,8 +10,11 @@ if "%SPHINXBUILD%" == "" (
 set SOURCEDIR=.
 set BUILDDIR=_build
 set SPHINXPROJ=ProjectEuler
+set PYTHONDONTWRITEBYTECODE=1
 
 if "%1" == "" goto help
+RMDIR /S /Q _modules
+python create_documentation.py
 
 %SPHINXBUILD% >NUL 2>NUL
 if errorlevel 9009 (
