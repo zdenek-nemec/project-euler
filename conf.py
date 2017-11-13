@@ -20,6 +20,27 @@
 import sys
 # sys.path.insert(0, os.path.abspath('.'))
 sys.path.append('./pe001_multiples_of_3_and_5')
+sys.path.append('./pe002_even_fibonacci_numbers')
+sys.path.append('./pe003_largest_prime_factor')
+sys.path.append('./pe004_largest_palindrome_product')
+sys.path.append('./pe005_smallest_multiple')
+sys.path.append('./pe006_sum_square_difference')
+sys.path.append('./pe007_10001st_prime')
+sys.path.append('./pe008_largest_product_in_a_series')
+sys.path.append('./pe009_special_pythagorean_triplet')
+sys.path.append('./pe010_summation_of_primes')
+sys.path.append('./pe011_largest_product_in_a_grid')
+sys.path.append('./pe012_highly_divisible_triangular_number')
+sys.path.append('./pe013_large_sum')
+sys.path.append('./pe014_longest_collatz_sequence')
+sys.path.append('./pe015_lattice_paths')
+sys.path.append('./pe016_power_digit_sum')
+sys.path.append('./pe017_number_letter_counts')
+sys.path.append('./pe018_maximum_path_sum_i')
+sys.path.append('./pe019_counting_sundays')
+sys.path.append('./pe020_factorial_digit_sum')
+sys.path.append('./pe021_amicable_numbers')
+sys.path.append('./pe022_names_scores')
 
 # -- General configuration ------------------------------------------------
 

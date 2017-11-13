@@ -73,7 +73,7 @@ def main():
                 + link_previous + " | :ref:`Index <index>` | " + link_next + "\n\n" \
                 + ".. automodule:: " + subdir[0:5] + "\n" \
                 + "    :members:\n" \
-                + "    :undoc-members:\n" \
+                + "    :undoc-members:\n\n" \
                 + link_previous + " | :ref:`Index <index>` | " + link_next + "\n"
             with open(MODULES_PATH + "/" + filename, "w") as f:
                 f.write(content)
