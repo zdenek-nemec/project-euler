@@ -8,7 +8,7 @@ Name: pe001.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 2.1 (2017-11-10)
+Version: 2.2 (2017-11-13)
 
 Synopsis:
     ``pe001.py``
@@ -26,17 +26,13 @@ Description:
 """
 
 
-LIMIT = 1000
 BASES = [3, 5]
+LIMIT = 1000
 
 
 # Solution: Modulo ############################################################
 
 class SolutionModulo(object):
-    """
-    Go through all the numbers under specified limit, check whether they are
-    multiples of one of the bases and add them to the sum if yes.
-    """
     def __init__(self, limit):
         self._limit = limit
 
