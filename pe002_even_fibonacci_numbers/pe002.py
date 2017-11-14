@@ -8,7 +8,7 @@ Name: pe002.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 1.2 (2017-04-22)
+Version: 2.0 (2017-11-14)
 
 Synopsis:
     ``pe002.py``
@@ -33,37 +33,40 @@ Description:
 """
 
 
-LIMIT = 4000000  # Top Limit
+LIMIT = 4000000
 
 
 # Solution: Sum ###############################################################
 
-def solve_sum(limit):
-    """
-    Find all Fibonacci numbers under specified limit and calculate the sum of
-    the even ones.
-    """
-    num = 1
-    num_p = 0
-    num_pp = 0
-    sum_even = 0
-    while (num <= limit):
-        if (num % 2 == 0):
-            sum_even += num
-        num_pp = num_p
-        num_p = num
-        num = num_p + num_pp
-    return sum_even
+class Fibonacci(object):
+    def __init__(self, limit):
+        self._numbers = self._generate_numbers(limit)
+
+    def _generate_numbers(self, limit):
+        numbers = [1, 2]
+        while True:
+            next = self._get_next(numbers)
+            if next > limit:
+                break
+            else:
+                numbers.append(next)
+        return numbers
+
+    def _get_next(self, numbers):
+        return (numbers[-2] + numbers[-1])
+
+    def sum_even(self):
+        sum_of_even = 0
+        for number in self._numbers:
+            if number % 2 == 0:
+                sum_of_even += number
+        return sum_of_even
 
 
 # Main ########################################################################
 
 def main():
-    result = solve_sum(LIMIT)
-    print "Solution: Sum"
-    print "\tThe sum of the even numbers of Fibonacci sequence under limit", LIMIT, "is", result
-
-    return 0
+    print Fibonacci(LIMIT).sum_even()
 
 
 if __name__ == "__main__":
