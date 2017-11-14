@@ -8,7 +8,7 @@ Name: pe001.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 2.2 (2017-11-13)
+Version: 2.3 (2017-11-14)
 
 Synopsis:
     ``pe001.py``
@@ -32,14 +32,14 @@ LIMIT = 1000
 
 # Solution: Modulo ############################################################
 
-class SolutionModulo(object):
-    def __init__(self, limit):
-        self._limit = limit
+class Multiples(object):
+    def __init__(self, bases):
+        self._bases = bases
 
-    def sum_multiples(self, bases):
+    def sum_multiples(self, limit):
         sum_of_multiples = 0
-        for number in xrange(self._limit):
-            for base in bases:
+        for number in xrange(limit):
+            for base in self._bases:
                 if number % base == 0:
                     sum_of_multiples += number
                     break
@@ -49,7 +49,7 @@ class SolutionModulo(object):
 # Main ########################################################################
 
 def main():
-    print SolutionModulo(LIMIT).sum_multiples(BASES)
+    print Multiples(BASES).sum_multiples(LIMIT)
 
 
 if __name__ == "__main__":
