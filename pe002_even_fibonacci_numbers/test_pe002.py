@@ -17,18 +17,18 @@ class FibonacciTest(unittest.TestCase):
             ("Result should be", expected_result, "but is", numbers))
 
     @parameterized.expand([
-        [100, [1, 2], 3],
-        [100, [1, 2, 3], 5],
-        [100, [1, 2, 3, 5], 8],
-        [100, [1, 2, 3, 5, 8], 13]
+        [[1, 2], 3],
+        [[1, 2, 3], 5],
+        [[1, 2, 3, 5], 8],
+        [[1, 2, 3, 5, 8], 13]
     ])
-    def test_get_next(self, limit, numbers, expected_result):
-        next = Fibonacci(limit)._get_next(numbers)
+    def test_get_next(self, numbers, expected_result):
+        next_number = Fibonacci.get_next(numbers)
         self.assertEqual(
-            next,
+            next_number,
             expected_result,
             "Result should be %d but is %d."
-            % (expected_result, next))
+            % (expected_result, next_number))
 
     @parameterized.expand([
         [4000000, 4613732]

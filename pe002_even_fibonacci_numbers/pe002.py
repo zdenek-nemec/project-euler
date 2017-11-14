@@ -45,15 +45,16 @@ class Fibonacci(object):
     def _generate_numbers(self, limit):
         numbers = [1, 2]
         while True:
-            next = self._get_next(numbers)
-            if next > limit:
+            next_number = self.get_next(numbers)
+            if next_number > limit:
                 break
             else:
-                numbers.append(next)
+                numbers.append(next_number)
         return numbers
 
-    def _get_next(self, numbers):
-        return (numbers[-2] + numbers[-1])
+    @staticmethod
+    def get_next(numbers):
+        return numbers[-2] + numbers[-1]
 
     def sum_even(self):
         sum_of_even = 0
