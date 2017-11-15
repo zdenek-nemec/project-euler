@@ -28,7 +28,7 @@ Description:
 NUMBER = 600851475143
 
 
-# Solution: ... ###############################################################
+# Solution: Factors of factors ################################################
 
 class Factors(object):
     def __init__(self):
