@@ -9,8 +9,8 @@
 Zdenek versus Project Euler
 ===========================
 
-My Project Euler solutions. Visit https://projecteuler.net/ for more
-information about Project Euler.
+My solutions for Project Euler problems. Visit https://projecteuler.net/ for
+more information about the Project Euler.
 
 Open
 ====
