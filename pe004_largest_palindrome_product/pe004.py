@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 
 """
-PE004:  Largest palindrome product
-----------------------------------
+PE004: Largest palindrome product
+---------------------------------
 
 Name: pe004.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 1.2 (2017-04-22)
+Version: 2.0 (2017-11-20)
 
 Synopsis:
     ``pe004.py``
@@ -17,70 +17,74 @@ Examples:
     ``pe004.py``
 
 Description:
-    Solution for Project Euler Problem 4 (https://projecteuler.net/problem=4).
+    Solution for Project Euler problem 4 (https://projecteuler.net/problem=4).
 
     A palindromic number reads the same both ways. The largest palindrome made
     from the product of two 2-digit numbers is :math:`9009 = 91 \\times 99`.
 
     Find the largest palindrome made from the product of two 3-digit numbers.
-
-.. warning::
-    **Error**: Palindromes with odd number of digits are omitted!
 """
 
 
-DIGITS = 3  # Digits in both factors of palindromic number
+import math
 
 
-# Solution: Brute Force #######################################################
-
-def get_factors(num, digits):
-    factors = []
-    i = 2
-    top = num/2
-    while (i <= top):
-        if (num % i == 0):
-            if ((len(str(i)) == digits) and (len(str(top)) == digits)):
-                factors.append(i)
-                factors.append(num/i)
-                break
-        i += 1;
-        top = num/i
-    return factors
+DIGITS = 3
 
 
-def get_lower_pn(last):
-    last_str = str(last)
-    assert ((len(last_str) % 2) == 0), "Number of digits is expected to be even."
-    last_left = int(last_str[:len(last_str)/2])
-    new_left = last_left-1
-    new_str = str(new_left) + str(new_left)[::-1]  # Extended slice (reverse string)
-    new = int(new_str)
-    return new
+class Factors(object):
+    @staticmethod
+    def get_factors(number):
+        factors = [[1, number]]
+        possible_factor = 2
+        cap = math.sqrt(number)
+        while possible_factor <= cap:
+            if number % possible_factor == 0:
+                factors.append([possible_factor, number / possible_factor])
+            possible_factor += 1
+        return factors
+
+    def get_factors_with_digits(self, number, digits):
+        factors = self.get_factors(number)
+        selected_factors = []
+        for pair in factors:
+            length_0 = len(str(pair[0]))
+            length_1 = len(str(pair[1]))
+            if length_0 == digits and length_1 == digits:
+                selected_factors.append(pair)
+        return selected_factors
 
 
-def solve_brute_force(digits):
-    num = ((10 ** digits) ** 2) - 1
-    while True:
-        factors = get_factors(num, digits)
-        if (factors != []):
-            return num
-            break
-        if (num == 0):
-            break
-        num = get_lower_pn(num)
+class Palindromes(object):
+    def __init__(self, length):
+        self._current = int(length * "9")
 
-    return 0
+    def get_current(self):
+        return self._current
+
+    def get_lower(self):
+        length = len(str(self._current))
+        segment = str(int(str(self._current)[:length / 2]) - 1)
+        return int(segment + segment[::-1])
+
+    def set_lower(self):
+        self._current = self.get_lower()
 
 
-# Main ########################################################################
+class SolutionTopToBottom(object):
+    @staticmethod
+    def solve(digits):
+        factors = Factors()
+        palindromes = Palindromes(digits * 2)
+        while not(
+            factors.get_factors_with_digits(palindromes.get_current(), digits)
+        ):
+            palindromes.set_lower()
+        return palindromes.get_current()
+
 
 def main():
-    result = solve_brute_force(DIGITS)
-    print "Solution: Brute Force"
-    print "\tThe largest palindrome made from the product of two", DIGITS, "digit numbers is", result
-
-    return 0
+    print SolutionTopToBottom().solve(DIGITS)
 
 
 if __name__ == "__main__":
