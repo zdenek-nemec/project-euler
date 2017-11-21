@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 PE001: Multiples of 3 and 5
@@ -8,7 +8,7 @@ Name: pe001.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 2.3 (2017-11-14)
+Version: 3.0 (2017-11-21)
 
 Synopsis:
     ``pe001.py``
@@ -26,30 +26,24 @@ Description:
 """
 
 
-BASES = [3, 5]
+MULTIPLIERS = [3, 5]
 LIMIT = 1000
 
 
-# Solution: Modulo ############################################################
-
-class Multiples(object):
-    def __init__(self, bases):
-        self._bases = bases
-
-    def sum_multiples(self, limit):
+class SolutionModulo(object):
+    @staticmethod
+    def solve(multipliers, limit):
         sum_of_multiples = 0
-        for number in xrange(limit):
-            for base in self._bases:
-                if number % base == 0:
+        for number in range(limit):
+            for selected_multiplier in multipliers:
+                if number % selected_multiplier == 0:
                     sum_of_multiples += number
                     break
         return sum_of_multiples
 
 
-# Main ########################################################################
-
 def main():
-    print Multiples(BASES).sum_multiples(LIMIT)
+    print(SolutionModulo.solve(MULTIPLIERS, LIMIT))
 
 
 if __name__ == "__main__":
