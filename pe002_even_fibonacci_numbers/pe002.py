@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 PE002: Even Fibonacci numbers
@@ -8,7 +8,7 @@ Name: pe002.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 2.0 (2017-11-14)
+Version: 3.0 (2017-11-23)
 
 Synopsis:
     ``pe002.py``
@@ -33,41 +33,42 @@ Description:
 """
 
 
+START = [1, 2]
 LIMIT = 4000000
 
 
-# Solution: Sum ###############################################################
-
 class Fibonacci(object):
-    def __init__(self, limit):
-        self._numbers = self._generate_numbers(limit)
+    def __init__(self, start):
+        self._numbers = start
 
-    def _generate_numbers(self, limit):
-        numbers = [1, 2]
-        while True:
-            next_number = self.get_next(numbers)
-            if next_number > limit:
-                break
-            else:
-                numbers.append(next_number)
-        return numbers
+    def add_next(self):
+        next_number = self._numbers[-2] + self._numbers[-1]
+        self._numbers.append(next_number)
 
+    def get_all(self):
+        return self._numbers
+
+    def get_last(self):
+        return self._numbers[-1]
+
+
+class SolutionSum(object):
     @staticmethod
-    def get_next(numbers):
-        return numbers[-2] + numbers[-1]
-
-    def sum_even(self):
+    def solve(start, limit):
+        fibonacci = Fibonacci(start)
+        while fibonacci.get_last() < limit:
+            fibonacci.add_next()
         sum_of_even = 0
-        for number in self._numbers:
-            if number % 2 == 0:
+        for number in fibonacci.get_all():
+            if number > limit:
+                break
+            elif number % 2 == 0:
                 sum_of_even += number
         return sum_of_even
 
 
-# Main ########################################################################
-
 def main():
-    print Fibonacci(LIMIT).sum_even()
+    print(SolutionSum.solve(START, LIMIT))
 
 
 if __name__ == "__main__":
