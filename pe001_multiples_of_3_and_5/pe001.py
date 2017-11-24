@@ -8,7 +8,7 @@ Name: pe001.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 3.0 (2017-11-21)
+Version: 3.1 (2017-11-24)
 
 Synopsis:
     ``pe001.py``
@@ -30,7 +30,7 @@ MULTIPLIERS = [3, 5]
 LIMIT = 1000
 
 
-class SolutionModulo(object):
+class Solution(object):
     @staticmethod
     def solve(multipliers, limit):
         sum_of_multiples = 0
@@ -43,7 +43,7 @@ class SolutionModulo(object):
 
 
 def main():
-    print(SolutionModulo.solve(MULTIPLIERS, LIMIT))
+    print(Solution.solve(MULTIPLIERS, LIMIT))
 
 
 if __name__ == "__main__":
