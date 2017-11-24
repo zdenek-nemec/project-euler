@@ -8,7 +8,7 @@ Name: pe002.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 3.0 (2017-11-23)
+Version: 3.1 (2017-11-24)
 
 Synopsis:
     ``pe002.py``
@@ -52,7 +52,7 @@ class Fibonacci(object):
         return self._numbers[-1]
 
 
-class SolutionSum(object):
+class Solution(object):
     @staticmethod
     def solve(start, limit):
         fibonacci = Fibonacci(start)
@@ -68,7 +68,7 @@ class SolutionSum(object):
 
 
 def main():
-    print(SolutionSum.solve(START, LIMIT))
+    print(Solution.solve(START, LIMIT))
 
 
 if __name__ == "__main__":

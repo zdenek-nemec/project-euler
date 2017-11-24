@@ -1,15 +1,15 @@
 import unittest
 
 from parameterized import parameterized
-from pe002_even_fibonacci_numbers.pe002 import SolutionSum
+from pe002_even_fibonacci_numbers.pe002 import Solution
 
 
-class SolutionSumTest(unittest.TestCase):
+class SolutionTest(unittest.TestCase):
     @parameterized.expand([
         [[1, 2], 4000000, 4613732]
     ])
     def test_solve(self, start, limit, expected_sum):
-        sum_of_even = SolutionSum.solve(start, limit)
+        sum_of_even = Solution.solve(start, limit)
         self.assertEqual(
             sum_of_even,
             expected_sum,
