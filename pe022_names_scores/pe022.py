@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 PE022: Names scores
@@ -8,7 +8,7 @@ Name: pe022.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 1.0 (2017-06-20)
+Version: 2.0 (2017-11-27)
 
 Synopsis:
     ``pe022.py``
@@ -75,8 +75,8 @@ def solve_sorted_list(input_file):
 
 def main():
     result = solve_sorted_list(INPUT_FILE)
-    print "Solution: Sorted List"
-    print "\tTotal of all the name scores in the file is %d." % (result)
+    print("Solution: Sorted List")
+    print("\tTotal of all the name scores in the file is %d." % (result))
 
     return 0
 

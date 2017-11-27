@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 PE009: Special Pythagorean triplet
@@ -8,7 +8,7 @@ Name: pe009.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 1.1 (2017-04-22)
+Version: 2.0 (2017-11-27)
 
 Synopsis:
     ``pe009.py``
@@ -63,8 +63,8 @@ def solve_power_array(sum):
 
 def main():
     result = solve_power_array(SUM)
-    print "Solution: Power Array"
-    print "\tThe product of Pythagorean triplet which sum is", SUM,"is", result
+    print("Solution: Power Array")
+    print("\tThe product of Pythagorean triplet which sum is", SUM,"is", result)
     return 0
 
 

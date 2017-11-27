@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 PE375: Minimum of subsequences
@@ -8,7 +8,7 @@ Name: pe375.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 0.1 (2017-06-12)
+Version: 0.2 (2017-11-27)
 
 Synopsis:
     ``pe375.py``
@@ -76,8 +76,8 @@ def solve_brute_force():
 
 def main():
     result = solve_brute_force()
-    print "Solution: Brute Force"
-    print "\tThe lucky number is <dramatic pause>", result
+    print("Solution: Brute Force")
+    print("\tThe lucky number is <dramatic pause>", result)
 
     return 0
 

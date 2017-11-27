@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 PE005: Smallest multiple
@@ -8,7 +8,7 @@ Name: pe005.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 1.2 (2017-04-22)
+Version: 2.0 (2017-11-27)
 
 Synopsis:
     ``pe005.py``
@@ -63,8 +63,8 @@ def solve_prime_seed(top):
 
 def main():
     result = solve_prime_seed(TOP)
-    print "Solution: Prime Seed"
-    print "\tThe smallest positive number that is evenly divisible by all of the numbers from 1 to", TOP, "is", result
+    print("Solution: Prime Seed")
+    print("\tThe smallest positive number that is evenly divisible by all of the numbers from 1 to", TOP, "is", result)
 
     return 0
 

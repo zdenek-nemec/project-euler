@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 PE025: 1000-digit Fibonacci number
@@ -8,7 +8,7 @@ Name: pe025.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 0.1 (2017-08-20)
+Version: 0.2 (2017-11-27)
 
 Synopsis:
     ``pe025.py``
@@ -110,8 +110,8 @@ def main():
     Docstring for the main function.
     """
     result = solve_brute_force(LUCKY_NUMBER)
-    print "Solution: Brute Force"
-    print "\tThe index of the first term in the Fibonacci sequence to contain %d digits is %d!" % (DIGITS, result)
+    print("Solution: Brute Force")
+    print("\tThe index of the first term in the Fibonacci sequence to contain %d digits is %d!" % (DIGITS, result))
 
     return 0
 

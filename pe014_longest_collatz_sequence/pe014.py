@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 PE014: Longest Collatz sequence
@@ -8,7 +8,7 @@ Name: pe014.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 1.1 (2017-05-03)
+Version: 2.0 (2017-11-27)
 
 Synopsis:
     ``pe014.py``
@@ -193,8 +193,8 @@ def main():
     # print "\tStarting number", result, ", of those under", LIMIT, ", produces the longest chain."
 
     result = solve_dictionary(LIMIT)
-    print "Solution: Dictionary"
-    print "\tStarting number", result, ", of those under", LIMIT, ", produces the longest chain."
+    print("Solution: Dictionary")
+    print("\tStarting number", result, ", of those under", LIMIT, ", produces the longest chain.")
 
     return 0
 

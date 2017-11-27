@@ -1,7 +1,7 @@
 import unittest
 
 from parameterized import parameterized
-from pe004 import SolutionTopToBottom
+from pe004_largest_palindrome_product.pe004 import SolutionTopToBottom
 
 
 class SolutionTopToBottomTest(unittest.TestCase):

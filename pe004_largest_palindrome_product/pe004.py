@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 PE004: Largest palindrome product
@@ -8,7 +8,7 @@ Name: pe004.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 2.0 (2017-11-20)
+Version: 3.0 (2017-11-27)
 
 Synopsis:
     ``pe004.py``
@@ -40,7 +40,7 @@ class Factors(object):
         cap = math.sqrt(number)
         while possible_factor <= cap:
             if number % possible_factor == 0:
-                factors.append([possible_factor, number / possible_factor])
+                factors.append([possible_factor, number // possible_factor])
             possible_factor += 1
         return factors
 
@@ -64,7 +64,7 @@ class Palindromes(object):
 
     def get_lower(self):
         length = len(str(self._current))
-        segment = str(int(str(self._current)[:length / 2]) - 1)
+        segment = str(int(str(self._current)[:length // 2]) - 1)
         return int(segment + segment[::-1])
 
     def set_lower(self):
@@ -84,7 +84,7 @@ class SolutionTopToBottom(object):
 
 
 def main():
-    print SolutionTopToBottom().solve(DIGITS)
+    print(SolutionTopToBottom().solve(DIGITS))
 
 
 if __name__ == "__main__":

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 PE358: Cyclic numbers
@@ -8,7 +8,7 @@ Name: pe358.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 0.1 (2017-08-20)
+Version: 0.2 (2017-11-27)
 
 Synopsis:
     ``pe358.py``
@@ -116,8 +116,8 @@ def main():
     Docstring for the main function.
     """
     result = solve_brute_force(LUCKY_NUMBER)
-    print "Solution: Brute Force"
-    print "\tThe sum of the digits in the specific cyclic number is %d!" % (result)
+    print("Solution: Brute Force")
+    print("\tThe sum of the digits in the specific cyclic number is %d!" % (result))
 
     return 0
 

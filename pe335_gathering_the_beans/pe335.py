@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 PE335: Gathering the beans
@@ -8,7 +8,7 @@ Name: pe335.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 0.1 (2017-11-01)
+Version: 0.2 (2017-11-27)
 
 Synopsis:
     ``pe335.py``
@@ -91,8 +91,8 @@ def main():
     Docstring for the main function.
     """
     result = solve_brute_force(LUCKY_NUMBER)
-    print "Solution: Brute Force"
-    print "\tThe lucky number is <dramatic pause> %d!" % (result)
+    print("Solution: Brute Force")
+    print("\tThe lucky number is <dramatic pause> %d!" % (result))
 
     return 0
 

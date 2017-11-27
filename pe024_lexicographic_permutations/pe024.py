@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 PE024: Lexicographic permutations
@@ -8,7 +8,7 @@ Name: pe024.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 0.1 (2017-06-21)
+Version: 0.2 (2017-11-27)
 
 Synopsis:
     ``pe024.py``
@@ -84,8 +84,8 @@ def main():
     Docstring for the main function.
     """
     result = solve_brute_force(LUCKY_NUMBER)
-    print "Solution: Brute Force"
-    print "\tThe millionth lexicographic permutation of the digits %s is %d!" % (DIGITS, result)
+    print("Solution: Brute Force")
+    print("\tThe millionth lexicographic permutation of the digits %s is %d!" % (DIGITS, result))
 
     return 0
 

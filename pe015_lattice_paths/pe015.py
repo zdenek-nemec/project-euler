@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 PE015: Lattice paths
@@ -8,7 +8,7 @@ Name: pe015.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 1.0 (2017-05-16)
+Version: 2.0 (2017-11-27)
 
 Synopsis:
     ``pe015.py``
@@ -55,8 +55,8 @@ def solve_matrix(x, y):
 
 def main():
     result = solve_matrix(DIM_X, DIM_Y)
-    print "Solution: Matrix"
-    print "\tThe number of routes in a", DIM_X, "x", DIM_Y, "grid is", result
+    print("Solution: Matrix")
+    print("\tThe number of routes in a", DIM_X, "x", DIM_Y, "grid is", result)
 
     return 0
 

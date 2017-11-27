@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 PE013: Large sum
@@ -8,7 +8,7 @@ Name: pe013.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 2.2 (2017-04-22)
+Version: 3.0 (2017-11-27)
 
 Synopsis:
     ``pe013.py``
@@ -192,12 +192,12 @@ def main():
         assert (len(str(row)) == 50), "Each number is expected to have 50 digits."
 
     result = solve_brute_force(numbers)
-    print "Solution: Brute Force"
-    print "\tThe first 10 digits of the sum are", result
+    print("Solution: Brute Force")
+    print("\tThe first 10 digits of the sum are", result)
 
     result = solve_substring(numbers)
-    print "Solution: Sub-String"
-    print "\tThe first 10 digits of the sum are", result
+    print("Solution: Sub-String")
+    print("\tThe first 10 digits of the sum are", result)
 
     return 0
 

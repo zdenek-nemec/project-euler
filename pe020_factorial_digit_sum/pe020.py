@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 PE020: Factorial digit sum
@@ -8,7 +8,7 @@ Name: pe020.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 1.0 (2017-06-12)
+Version: 2.0 (2017-11-27)
 
 Synopsis:
     ``pe020.py``
@@ -55,8 +55,8 @@ def solve_brute_force(number):
 
 def main():
     result = solve_brute_force(NUMBER)
-    print "Solution: Brute Force"
-    print "\tThe sum of the digits in the %d! is %d." % (NUMBER, result)
+    print("Solution: Brute Force")
+    print("\tThe sum of the digits in the %d! is %d." % (NUMBER, result))
 
     return 0
 

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 PE010: Summation of primes
@@ -8,7 +8,7 @@ Name: pe010.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 2.1 (2017-04-22)
+Version: 3.0 (2017-11-27)
 
 Synopsis:
     ``pe010.py``
@@ -70,8 +70,8 @@ def solve_prime_divisor(limit):
 
 def main():
     result = solve_prime_divisor(LIMIT)
-    print "Solution: Prime Divisor"
-    print "\tSum of all prime numbers below", LIMIT, "is", result
+    print("Solution: Prime Divisor")
+    print("\tSum of all prime numbers below", LIMIT, "is", result)
     return 0
 
 

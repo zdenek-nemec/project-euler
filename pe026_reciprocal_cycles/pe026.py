@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 PE026: Reciprocal cycles
@@ -8,7 +8,7 @@ Name: pe026.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 0.1 (2017-09-03)
+Version: 0.2 (2017-11-27)
 
 Synopsis:
     ``pe026.py``
@@ -101,8 +101,8 @@ def main():
     Docstring for the main function.
     """
     result = solve_brute_force(LUCKY_NUMBER)
-    print "Solution: Brute Force"
-    print "\tDenominator %d leads to the longest recurring cycle." % (result)
+    print("Solution: Brute Force")
+    print("\tDenominator %d leads to the longest recurring cycle." % (result))
 
     return 0
 

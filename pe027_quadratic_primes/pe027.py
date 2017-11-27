@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 PE027: Quadratic primes
@@ -8,7 +8,7 @@ Name: pe027.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 0.1 (2017-09-19)
+Version: 0.2 (2017-11-27)
 
 Synopsis:
     ``pe027.py``
@@ -95,8 +95,8 @@ def main():
     Docstring for the main function.
     """
     result = solve_brute_force(LUCKY_NUMBER)
-    print "Solution: Brute Force"
-    print "\tThe product of the coefficients is %d!" % (result)
+    print("Solution: Brute Force")
+    print("\tThe product of the coefficients is %d!" % (result))
 
     return 0
 

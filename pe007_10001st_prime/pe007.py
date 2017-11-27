@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 PE007: 10001st prime
@@ -8,7 +8,7 @@ Name: pe007.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 1.2 (2017-04-22)
+Version: 2.0 (2017-11-27)
 
 Synopsis:
     ``pe007.py``
@@ -93,8 +93,8 @@ def main():
     # print "\tPrime number on position", POS, "is", result
 
     result = solve_prime_divisor(POS)
-    print "Solution: Prime Divisor"
-    print "\tPrime number on position", POS, "is", result
+    print("Solution: Prime Divisor")
+    print("\tPrime number on position", POS, "is", result)
     return 0
 
 

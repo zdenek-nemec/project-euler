@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 PE006: Sum square difference
@@ -8,7 +8,7 @@ Name: pe006.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 1.2 (2017-04-22)
+Version: 2.0 (2017-11-27)
 
 Synopsis:
     ``pe006.py``
@@ -62,8 +62,8 @@ def solve_brute_force(top):
 
 def main():
     result = solve_brute_force(TOP)
-    print "Solution: Brute Force"
-    print "\tDifference between the sum of the squares and the square of the sum of first", TOP, "numbers is", result
+    print("Solution: Brute Force")
+    print("\tDifference between the sum of the squares and the square of the sum of first", TOP, "numbers is", result)
     return 0
 
 

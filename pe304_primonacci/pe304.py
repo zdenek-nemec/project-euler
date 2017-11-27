@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 PE304: Primonacci
@@ -8,7 +8,7 @@ Name: pe304.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 0.1 (2017-10-18)
+Version: 0.2 (2017-11-27)
 
 Synopsis:
     ``pe304.py``
@@ -86,8 +86,8 @@ def main():
     Docstring for the main function.
     """
     result = solve_brute_force(LUCKY_NUMBER)
-    print "Solution: Brute Force"
-    print "\tThe lucky number is <dramatic pause> %d!" % (result)
+    print("Solution: Brute Force")
+    print("\tThe lucky number is <dramatic pause> %d!" % (result))
 
     return 0
 

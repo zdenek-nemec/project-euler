@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 PE012: Highly divisible triangular number
@@ -8,7 +8,7 @@ Name: pe012.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 2.2 (2017-04-22)
+Version: 3.0 (2017-11-27)
 
 Synopsis:
     ``pe012.py``
@@ -128,8 +128,8 @@ def solve_brute_force(divisors):
 
 def main():
     result = solve_brute_force(DIVISORS)
-    print "Solution: Brute Force"
-    print "\tThe value of first triangle number with more than", DIVISORS, "divisors is", result
+    print("Solution: Brute Force")
+    print("\tThe value of first triangle number with more than", DIVISORS, "divisors is", result)
 
     return 0
 

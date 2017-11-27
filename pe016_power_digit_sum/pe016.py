@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 PE016: Power digit sum
@@ -8,7 +8,7 @@ Name: pe016.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 1.0 (2017-05-21)
+Version: 2.0 (2017-11-27)
 
 Synopsis:
     ``pe016.py``
@@ -49,8 +49,8 @@ def solve_brute_force(power):
 
 def main():
     result = solve_brute_force(POWER)
-    print "Solution: Brute Force"
-    print "\tThe sum of the digits of the number 2 ^", POWER, "is", result
+    print("Solution: Brute Force")
+    print("\tThe sum of the digits of the number 2 ^", POWER, "is", result)
 
     return 0
 

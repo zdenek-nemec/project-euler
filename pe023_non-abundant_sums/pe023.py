@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 PE023: Non-abundant sums
@@ -8,7 +8,7 @@ Name: pe023.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 0.1 (2017-06-18)
+Version: 0.2 (2017-11-27)
 
 Synopsis:
     ``pe023.py``
@@ -89,8 +89,8 @@ def main():
     Docstring for the main function.
     """
     result = solve_brute_force(LUCKY_NUMBER)
-    print "Solution: Brute Force"
-    print "\tSum of all the positive integers which cannot be written as the sum of two abundant number is %d!" % (result)
+    print("Solution: Brute Force")
+    print("\tSum of all the positive integers which cannot be written as the sum of two abundant number is %d!" % (result))
 
     return 0
 

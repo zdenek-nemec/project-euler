@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 PE028: Number spiral diagonals
@@ -8,7 +8,7 @@ Name: pe028.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 0.1 (2017-09-23)
+Version: 0.2 (2017-11-27)
 
 Synopsis:
     ``pe028.py``
@@ -88,8 +88,8 @@ def main():
     Docstring for the main function.
     """
     result = solve_brute_force(LUCKY_NUMBER)
-    print "Solution: Brute Force"
-    print "\tThe sum of the number on the diagonals in a %d by %d spiral is %d!" % (SIZE, SIZE, result)
+    print("Solution: Brute Force")
+    print("\tThe sum of the number on the diagonals in a %d by %d spiral is %d!" % (SIZE, SIZE, result))
 
     return 0
 

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 PE158: Exploring strings for which only one character comes lexicographically after its neighbour to the left
@@ -8,7 +8,7 @@ Name: pe158.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 0.1 (2017-06-21)
+Version: 0.2 (2017-11-27)
 
 Synopsis:
     ``pe158.py``
@@ -86,8 +86,8 @@ def main():
     Docstring for the main function.
     """
     result = solve_brute_force(LUCKY_NUMBER)
-    print "Solution: Brute Force"
-    print "\tThe maximum value of p(n) is %d!" % (result)
+    print("Solution: Brute Force")
+    print("\tThe maximum value of p(n) is %d!" % (result))
 
     return 0
 

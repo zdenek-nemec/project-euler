@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 PE008: Largest product in a series
@@ -8,7 +8,7 @@ Name: pe008.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 1.2 (2017-04-22)
+Version: 2.0 (2017-11-27)
 
 Synopsis:
     ``pe008.py``
@@ -92,8 +92,8 @@ def main():
     assert (len(number) == 1000), "Number is expected to have 1000 digits."
 
     result = solve_brute_force(number, DIGITS)
-    print "Solution: Brute Force"
-    print "\tThe greatest product of", DIGITS, "adjacent digits is", result
+    print("Solution: Brute Force")
+    print("\tThe greatest product of", DIGITS, "adjacent digits is", result)
 
     return 0
 
