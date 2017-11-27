@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 PE018: Maximum path sum I
@@ -8,7 +8,7 @@ Name: pe018.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 1.0 (2017-05-29)
+Version: 2.0 (2017-11-27)
 
 Synopsis:
     ``pe018.py``
@@ -97,7 +97,7 @@ class TriangleBF():
         Load the triangle data into the structure from given file.
         """
         data = []
-        with open(filename, "rb") as csvfile:
+        with open(filename) as csvfile:
             reader = csv.reader(csvfile, delimiter = ' ')
             for row in reader:
                 data.append(row)
@@ -220,7 +220,7 @@ class TriangleBU():
         Load the triangle data into the structure from given file.
         """
         data = []
-        with open(filename, "rb") as csvfile:
+        with open(filename) as csvfile:
             reader = csv.reader(csvfile, delimiter = ' ')
             for row in reader:
                 data.append(row)
@@ -258,12 +258,12 @@ def solve_bottom_up(filename):
 
 def main():
     result = solve_brute_force(INPUT_FILE)
-    print "Solution: Brute Force"
-    print "\tThe maximum total from top to bottom of the triangle is", result
+    print("Solution: Brute Force")
+    print("\tThe maximum total from top to bottom of the triangle is", result)
 
     result = solve_bottom_up(INPUT_FILE)
-    print "Solution: Bottom-Up"
-    print "\tThe maximum total from top to bottom of the triangle is", result
+    print("Solution: Bottom-Up")
+    print("\tThe maximum total from top to bottom of the triangle is", result)
 
     return 0
 

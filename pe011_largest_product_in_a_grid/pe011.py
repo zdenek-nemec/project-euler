@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 PE011: Largest product in a grid
@@ -8,7 +8,7 @@ Name: pe011.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 3.1 (2017-04-22)
+Version: 4.0 (2017-11-27)
 
 Synopsis:
     ``pe011.py``
@@ -131,17 +131,17 @@ def solve_brute_force(numbers, sequence):
 def main():
     # Load the numbers from numbers.txt file
     numbers = []
-    with open("numbers.txt", "rb") as csvfile:
+    with open("numbers.txt", "r") as csvfile:
         reader = csv.reader(csvfile, delimiter = ' ')
         for row in reader:
-            numbers.append(map(int, list(row)))
+            numbers.append(list(map(int, row)))
     assert (len(numbers) == 20), "The matrix is expected to have 20 rows."
     for row in numbers:
         assert (len(row) == 20), "Each row of the matrix is expected to have 20 values (columns)."
 
     result = solve_brute_force(numbers, SEQUENCE)
-    print "Solution: Brute Force"
-    print "\tThe greatest product of", SEQUENCE, "adjacent numbers is", result
+    print("Solution: Brute Force")
+    print("\tThe greatest product of", SEQUENCE, "adjacent numbers is", result)
 
     return 0
 

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 PE017: Number letter counts
@@ -8,7 +8,7 @@ Name: pe017.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 1.0 (2017-05-29)
+Version: 2.0 (2017-11-27)
 
 Synopsis:
     ``pe017.py``
@@ -92,19 +92,19 @@ def solve_brute_force(top):
         name = ""
         name_len = 0
         if (num >= 1000):
-            name += numbers[num / 1000] + " " + numbers[1000]
+            name += numbers[num // 1000] + " " + numbers[1000]
             num %= 1000
             if ((num < 100) and (num != 0)):
                 name += " and "
             elif (num != 0):
                 name += " "
         if (num >= 100):
-            name += numbers[num / 100] + " " + numbers[100]
+            name += numbers[num // 100] + " " + numbers[100]
             num %= 100
             if (num != 0):
                 name += " and "
         if ((num > 20) and (num % 10 != 0)):
-            name += numbers[num / 10 * 10] + "-" + numbers[num % 10]
+            name += numbers[num // 10 * 10] + "-" + numbers[num % 10]
         elif (num != 0):
             name += numbers[num]
         # print i, ":", name, ":", count_letters(name)
@@ -117,8 +117,8 @@ def solve_brute_force(top):
 
 def main():
     result = solve_brute_force(TOP)
-    print "Solution: Brute Force"
-    print "\tList of all the numbers in interval 1 to", TOP, "uses", result, "letters."
+    print("Solution: Brute Force")
+    print("\tList of all the numbers in interval 1 to", TOP, "uses", result, "letters.")
 
     return 0
 

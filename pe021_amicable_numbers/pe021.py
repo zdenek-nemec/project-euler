@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 PE021: Amicable numbers
@@ -8,7 +8,7 @@ Name: pe021.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 1.0 (2017-06-17)
+Version: 2.0 (2017-11-27)
 
 Synopsis:
     ``pe021.py``
@@ -110,7 +110,7 @@ class Divisors():
         """
         Print Divisors structure currently in memory.
         """
-        print self.__divisors
+        print(self.__divisors)
 
 
 def solve_optimized(limit):
@@ -146,8 +146,8 @@ def main():
     # print "\tThe sum of all the amicable numbers under %d is %d." % (LIMIT, result)
 
     result = solve_optimized(LIMIT)
-    print "Solution: Optimized"
-    print "\tThe sum of all the amicable numbers under %d is %d." % (LIMIT, result)
+    print("Solution: Optimized")
+    print("\tThe sum of all the amicable numbers under %d is %d." % (LIMIT, result))
 
     return 0
 

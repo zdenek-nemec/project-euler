@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 PE019: Counting Sundays
@@ -8,7 +8,7 @@ Name: pe019.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 1.0 (2017-06-08)
+Version: 2.0 (2017-11-27)
 
 Synopsis:
     ``pe019.py``
@@ -155,7 +155,7 @@ class Calendar():
         """
         i = 0
         for entry in self.__data:
-            print i, ":", entry
+            print(i, ":", entry)
             i += 1
 
 def solve_calendar(seed, search, start, end):
@@ -172,8 +172,8 @@ def solve_calendar(seed, search, start, end):
 
 def main():
     result = solve_calendar(SEED, SEARCH, START, END)
-    print "Solution: Calendar"
-    print "\tNumber of Sundays that fell on the first of the month during the twentieth century is", result
+    print("Solution: Calendar")
+    print("\tNumber of Sundays that fell on the first of the month during the twentieth century is", result)
 
     return 0
 
