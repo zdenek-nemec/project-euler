@@ -8,7 +8,7 @@ Name: pe004.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 3.0 (2017-11-27)
+Version: 3.1 (2018-02-20)
 
 Synopsis:
     ``pe004.py``
@@ -71,7 +71,7 @@ class Palindromes(object):
         self._current = self.get_lower()
 
 
-class SolutionTopToBottom(object):
+class Solution(object):
     @staticmethod
     def solve(digits):
         factors = Factors()
@@ -84,7 +84,7 @@ class SolutionTopToBottom(object):
 
 
 def main():
-    print(SolutionTopToBottom().solve(DIGITS))
+    print(Solution().solve(DIGITS))
 
 
 if __name__ == "__main__":
