@@ -8,7 +8,7 @@ Name: create_documentation.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 1.0 (2017-11-10)
+Version: 1.1 (2018-02-23)
 
 Synopsis:
     ``create_documentation.py``
@@ -35,10 +35,14 @@ def main():
 
     projects = []
     for subdir in next(os.walk("."))[1]:
-        if (subdir[0:2] == "pe"):
+        if (subdir[0:5] == "pe000"):
+            continue
+        elif (subdir[0:2] == "pe"):
             projects.append(subdir[0:5])
 
     for subdir in next(os.walk("."))[1]:
+        if (subdir[0:5] == "pe000"):
+            continue
         if (subdir[0:2] == "pe"):
             open_flag = False
             with open("." + "/" + subdir + "/" + subdir[0:5] + ".py", "r") as f:
