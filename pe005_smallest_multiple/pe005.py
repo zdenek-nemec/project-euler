@@ -8,7 +8,7 @@ Name: pe005.py
 
 Author: Zdenek Nemec <zdenek.nemec@artin.cz>
 
-Version: 2.0 (2017-11-27)
+Version: 2.1 (2018-02-25)
 
 Synopsis:
     ``pe005.py``
@@ -27,46 +27,39 @@ Description:
 """
 
 
-TOP = 20  # Top digit (divisor)
+TOP = 20
 
 
-# Solution: Prime Seed ########################################################
+class Solution(object):
+    @staticmethod
+    def get_seed(top):
+        prime_list = [2, 3, 5, 7, 11, 13, 17, 19]
+        seed = 1
+        for prime in prime_list:
+            if prime < top:
+                seed *= prime
+        return seed
 
-def get_seed(top):
-    primes = [2, 3, 5, 7, 11, 13, 17, 19]
-    seed = 1
-    for i in primes:
-        if (i < top):
-            seed *= i
-    return seed
+    @staticmethod
+    def check_divisibility(number, top):
+        for divisor in range(top, 1, -1):
+            if (number % divisor) != 0:
+                return False
+        return True
 
+    @staticmethod
+    def solve(top):
+        seed = Solution().get_seed(top)
+        number = seed
+        while True:
+            number += seed
+            if Solution().check_divisibility(number, top):
+                break
+        return number
 
-def check_div(num, top):
-    for i in range(top, 1, -1):
-        if ((num % i) != 0):
-            return 0
-    return 1
-
-
-def solve_prime_seed(top):
-    seed = get_seed(top)
-    i = 1
-    while True:
-        num = i * seed
-        if (check_div(num, top)):
-            return num
-        i += 1
-    return 0
-
-
-# Main ########################################################################
 
 def main():
-    result = solve_prime_seed(TOP)
-    print("Solution: Prime Seed")
-    print("\tThe smallest positive number that is evenly divisible by all of the numbers from 1 to", TOP, "is", result)
-
-    return 0
+    print(Solution().solve(TOP))
 
 
 if __name__ == "__main__":
