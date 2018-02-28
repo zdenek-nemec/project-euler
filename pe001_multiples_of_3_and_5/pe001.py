@@ -4,25 +4,12 @@
 PE001: Multiples of 3 and 5
 ---------------------------
 
-Name: pe001.py
+Solution for Project Euler problem 1 (https://projecteuler.net/problem=1).
 
-Author: Zdenek Nemec <zdenek.nemec@artin.cz>
+If we list all the natural numbers below 10 that are multiples of 3 or 5, we
+get 3, 5, 6 and 9. The sum of these multiples is 23.
 
-Version: 3.1 (2017-11-24)
-
-Synopsis:
-    ``pe001.py``
-
-Examples:
-    ``pe001.py``
-
-Description:
-    Solution for Project Euler problem 1 (https://projecteuler.net/problem=1).
-
-    If we list all the natural numbers below 10 that are multiples of 3 or 5,
-    we get 3, 5, 6 and 9. The sum of these multiples is 23.
-
-    Find the sum of all the multiples of 3 or 5 below 1000.
+Find the sum of all the multiples of 3 or 5 below 1000.
 """
 
 

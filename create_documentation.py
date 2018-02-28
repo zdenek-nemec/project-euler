@@ -4,20 +4,7 @@
 Create Sphinx documentation for Project Euler
 ---------------------------------------------
 
-Name: create_documentation.py
-
-Author: Zdenek Nemec <zdenek.nemec@artin.cz>
-
-Version: 1.1 (2018-02-23)
-
-Synopsis:
-    ``create_documentation.py``
-
-Examples:
-    ``create_documentation.py``
-
-Description:
-    Create RST files for Sphinx documentation of Project Euler.
+Create RST files for Sphinx documentation of Project Euler.
 """
 
 
@@ -50,7 +37,7 @@ def main():
                     line = f.readline()
                     if (line == ""):
                         break
-                    elif (line[0:10] == "Version: 0"):
+                    elif (line[0:10] == "Version: 0") or (line[0:17] == ".. warning:: Open"):
                         open_flag = True
                         break
                     elif (line[0:8] == "Version:"):
