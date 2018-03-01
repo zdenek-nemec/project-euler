@@ -10,7 +10,7 @@ class SolutionTest(unittest.TestCase):
         [7, 7]
     ])
     def test_solve(self, lucky_number, expected_lucky_number):
-        returned_lucky_number = Solution.solve(lucky_number)
+        returned_lucky_number = Solution().solve(lucky_number)
         self.assertEqual(
             returned_lucky_number,
             expected_lucky_number,

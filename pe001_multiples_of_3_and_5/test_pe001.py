@@ -10,7 +10,7 @@ class SolutionTest(unittest.TestCase):
         [[3, 5], 1000, 233168]
     ])
     def test_solve(self, multipliers, limit, expected_sum):
-        sum_of_multiples = Solution.solve(multipliers, limit)
+        sum_of_multiples = Solution().solve(multipliers, limit)
         self.assertEqual(
             sum_of_multiples,
             expected_sum,

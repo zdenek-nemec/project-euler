@@ -14,6 +14,6 @@ Requirements for a complete solution:
 * There are no code-check warnings from PyCharm and no line exceeds 80 characters.
 * Classes and methods are sorted alphabetically.
 * Line endings are CRLF.
-* Unit tests have at least a parameterized test for Solution.solve() method.
+* Unit tests have at least a parameterized test for Solution().solve() method.
 * The solution passes all the unit tests.
 * Sphinx documentation can be generated without errors and does not contain any issues.

@@ -1,28 +1,15 @@
 #!/usr/bin/env python3
 
 """
-PE004: Largest palindrome product
----------------------------------
+PE-004: Largest palindrome product
+----------------------------------
 
-Name: pe004.py
+Solution for Project Euler problem 4 (https://projecteuler.net/problem=4).
 
-Author: Zdenek Nemec <zdenek.nemec@artin.cz>
+A palindromic number reads the same both ways. The largest palindrome made from
+the product of two 2-digit numbers is :math:`9009 = 91 \\times 99`.
 
-Version: 3.1 (2018-02-20)
-
-Synopsis:
-    ``pe004.py``
-
-Examples:
-    ``pe004.py``
-
-Description:
-    Solution for Project Euler problem 4 (https://projecteuler.net/problem=4).
-
-    A palindromic number reads the same both ways. The largest palindrome made
-    from the product of two 2-digit numbers is :math:`9009 = 91 \\times 99`.
-
-    Find the largest palindrome made from the product of two 3-digit numbers.
+Find the largest palindrome made from the product of two 3-digit numbers.
 """
 
 

@@ -1,27 +1,14 @@
 #!/usr/bin/env python3
 
 """
-PE003: Largest prime factor
----------------------------
+PE-003: Largest prime factor
+----------------------------
 
-Name: pe003.py
+Solution for Project Euler problem 3 (https://projecteuler.net/problem=3).
 
-Author: Zdenek Nemec <zdenek.nemec@artin.cz>
+The prime factors of 13195 are 5, 7, 13 and 29.
 
-Version: 3.0 (2017-11-27)
-
-Synopsis:
-    ``pe003.py``
-
-Examples:
-    ``pe003.py``
-
-Description:
-    Solution for Project Euler problem 3 (https://projecteuler.net/problem=3).
-
-    The prime factors of 13195 are 5, 7, 13 and 29.
-
-    What is the largest prime factor of the number 600851475143?
+What is the largest prime factor of the number 600851475143?
 """
 
 
@@ -50,7 +37,7 @@ class Primes(object):
     @staticmethod
     def is_prime(number):
         prime_flag = False
-        if not Factors.get_factors(number):
+        if not Factors().get_factors(number):
             prime_flag = True
         return prime_flag
 
@@ -58,10 +45,10 @@ class Primes(object):
 class Solution(object):
     @staticmethod
     def solve(number):
-        factors = Factors.get_factors(number)
+        factors = Factors().get_factors(number)
         primes = []
         for selected_factor in factors:
-            if Primes.is_prime(selected_factor):
+            if Primes().is_prime(selected_factor):
                 primes.append(selected_factor)
         primes.sort()
         return primes[-1]

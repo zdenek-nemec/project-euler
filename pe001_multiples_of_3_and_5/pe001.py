@@ -30,7 +30,7 @@ class Solution(object):
 
 
 def main():
-    print(Solution.solve(MULTIPLIERS, LIMIT))
+    print(Solution().solve(MULTIPLIERS, LIMIT))
 
 
 if __name__ == "__main__":

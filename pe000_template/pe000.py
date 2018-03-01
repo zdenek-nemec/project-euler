@@ -20,7 +20,7 @@ class Solution(object):
 
 
 def main():
-    print(Solution.solve(LUCKY_NUMBER))
+    print(Solution().solve(LUCKY_NUMBER))
 
 
 if __name__ == "__main__":
