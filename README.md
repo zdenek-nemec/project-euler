@@ -8,8 +8,8 @@ Requirements for a complete solution:
 * The solution script can be run and displays only the result, which is accepted on the Project Euler site.
 * Python 3 is used and is specified on the first line of the solution script.
 * The header within the solution script contains complete description of the problem.
-* There is a class Solution with method solve().
-* The main() calls Solution.solve() with constants.
+* There is a class Solution() with method solve().
+* The main() calls Solution().solve() with constants.
 * All names (variables, classes, methods, ...) are self-explanatory and do not contain abbreviations.
 * There are no code-check warnings from PyCharm and no line exceeds 80 characters.
 * Classes and methods are sorted alphabetically.
