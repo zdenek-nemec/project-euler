@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
 """
-PE001: Multiples of 3 and 5
----------------------------
+PE-001: Multiples of 3 and 5
+----------------------------
 
 Solution for Project Euler problem 1 (https://projecteuler.net/problem=1).
 

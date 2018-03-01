@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
 """
-PE000: Template
----------------
+PE-000: Template
+----------------
 
 Solution for Project Euler Problem 0 (https://projecteuler.net/problem=0).
 
