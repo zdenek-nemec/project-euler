@@ -1,33 +1,20 @@
 #!/usr/bin/env python3
 
 """
-PE005: Smallest multiple
-------------------------
+PE-005: Smallest multiple
+-------------------------
 
-Name: pe005.py
+Solution for Project Euler Problem 5 (https://projecteuler.net/problem=5).
 
-Author: Zdenek Nemec <zdenek.nemec@artin.cz>
+2520 is the smallest number that can be divided by each of the numbers from 1
+to 10 without any remainder.
 
-Version: 2.1 (2018-02-25)
-
-Synopsis:
-    ``pe005.py``
-
-Examples:
-    ``pe005.py``
-
-Description:
-    Solution for Project Euler Problem 5 (https://projecteuler.net/problem=5).
-
-    2520 is the smallest number that can be divided by each of the numbers
-    from 1 to 10 without any remainder.
-
-    What is the smallest positive number that is evenly divisible by all of
-    the numbers from 1 to 20?
+What is the smallest positive number that is evenly divisible by all of the
+numbers from 1 to 20?
 """
 
 
-TOP = 20
+LIMIT = 20
 
 
 class Solution(object):
@@ -59,7 +46,7 @@ class Solution(object):
 
 
 def main():
-    print(Solution().solve(TOP))
+    print(Solution().solve(LIMIT))
 
 
 if __name__ == "__main__":
