@@ -14,9 +14,9 @@ class SolutionTest(unittest.TestCase):
         self.assertEqual(
             largest_prime_factor,
             expected_prime_factor,
-            "The result should be %d but is %d."
+            'The result should be %d but is %d.'
             % (expected_prime_factor, largest_prime_factor))
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     pass

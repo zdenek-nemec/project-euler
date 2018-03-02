@@ -12,6 +12,7 @@ Requirements for a complete solution:
 * The main() calls Solution().solve() with constants.
 * All names (variables, classes, methods, ...) are self-explanatory and do not contain abbreviations.
 * There are no code-check warnings from PyCharm and no line exceeds 80 characters.
+* Apostrophe (') is the default for the strings, not double quotes (").
 * Classes and methods are sorted alphabetically.
 * Line endings are CRLF.
 * Unit tests have at least a parameterized test for Solution().solve() method.

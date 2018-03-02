@@ -14,9 +14,9 @@ class SolutionTest(unittest.TestCase):
         self.assertEqual(
             palindrome,
             expected_palindrome,
-            "The result should be %d but is %d."
+            'The result should be %d but is %d.'
             % (expected_palindrome, palindrome))
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     pass

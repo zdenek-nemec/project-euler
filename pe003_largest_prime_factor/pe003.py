@@ -58,5 +58,5 @@ def main():
     print(Solution().solve(NUMBER))
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

@@ -14,9 +14,9 @@ class SolutionTest(unittest.TestCase):
         self.assertEqual(
             number,
             expected_number,
-            "The result should be %d but is %d."
+            'The result should be %d but is %d.'
             % (expected_number, number))
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     pass

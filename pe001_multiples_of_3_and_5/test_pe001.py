@@ -14,9 +14,9 @@ class SolutionTest(unittest.TestCase):
         self.assertEqual(
             sum_of_multiples,
             expected_sum,
-            "The result should be %d but is %d."
+            'The result should be %d but is %d.'
             % (expected_sum, sum_of_multiples))
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     pass
