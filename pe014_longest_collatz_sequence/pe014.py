@@ -61,7 +61,7 @@ class CollatzSequence(object):
         else:
             return self._get_last() * 3 + 1
 
-    def get_len(self):
+    def get_length(self):
         return len(self._sequence)
 
     def get_sequence(self):
@@ -83,9 +83,9 @@ class Solution(object):
         max_length = 1
         for i in range(1, limit):
             collatz = CollatzSequence(i)
-            if collatz.get_len() > max_length:
+            if collatz.get_length() > max_length:
                 max_start = i
-                max_length = collatz.get_len()
+                max_length = collatz.get_length()
         return max_start
 
     @staticmethod
