@@ -1,27 +1,13 @@
 #!/usr/bin/env python3
 
 """
-PE018: Maximum path sum I
--------------------------
+PE-018: Maximum path sum I
+--------------------------
 
-Name: pe018.py
+Solution for Project Euler Problem 18 (https://projecteuler.net/problem=18).
 
-Author: Zdenek Nemec <zdenek.nemec@artin.cz>
-
-Version: 2.0 (2017-11-27)
-
-Synopsis:
-    ``pe018.py``
-
-Examples:
-    ``pe018.py``
-
-Description:
-    Solution for Project Euler Problem 18
-    (https://projecteuler.net/problem=18).
-
-    By starting at the top of the triangle below and moving to adjacent
-    numbers on the row below, the maximum total from top to bottom is 23.
+By starting at the top of the triangle below and moving to adjacent numbers on
+the row below, the maximum total from top to bottom is 23.
 
 .. code-block:: none
 
@@ -32,9 +18,9 @@ Description:
 
 ..
 
-    That is, :math:`3 + 7 + 4 + 9 = 23`.
+That is, :math:`3 + 7 + 4 + 9 = 23`.
 
-    Find the maximum total from top to bottom of the triangle below:
+Find the maximum total from top to bottom of the triangle below:
 
 .. code-block:: none
 
@@ -54,27 +40,152 @@ Description:
      63 66 04 68 89 53 67 30 73 16 69 87 40 31
     04 62 98 27 23 09 70 98 73 93 38 53 60 04 23
 
-.. note::
-    As there are only 16384 routes, it is possible to solve this problem
-    by trying every route. However, Problem 67, is the same challenge with
-    a triangle containing one-hundred rows; it cannot be solved by brute
-    force, and requires a clever method! ;o)
+**NOTE**: As there are only 16384 routes, it is possible to solve this problem
+by trying every route. However, Problem 67, is the same challenge with a
+triangle containing one-hundred rows; it cannot be solved by brute force, and
+requires a clever method! ;o)
 """
 
 
 import csv
 
 
-# INPUT_FILE = "triangle_small.txt"
-INPUT_FILE = "triangle_big.txt"
+INPUT_FILENAME = 'triangle_big.txt'
 
 
-# Solution: Brute Force #######################################################
+class Solution(object):
+    @staticmethod
+    def solve(input_filename):
+        return Solution().solve_bottom_up(input_filename)
 
-class TriangleBF():
-    """
-    Data structure for solving the triangle sum with brute force.
-    """
+    @staticmethod
+    def solve_bottom_up(input_filename):
+        """
+        Go from the bottom of the triangle upwards. Update each node with a sum
+        of his value and greater value of his leaves. After reaching root of the
+        triangle, return its updated value.
+        """
+        triangle = TriangleBottomUp(input_filename)
+        triangle.focus_last_level()
+        while True:
+            if triangle.check_root():
+                break
+            triangle.focus_previous_level()
+            while True:
+                triangle.update(
+                    triangle.get_current() + max(
+                        triangle.get_left_leaf(),
+                        triangle.get_right_leaf()
+                    )
+                )
+                if triangle.check_last_node():
+                    break
+                triangle.focus_next_node()
+
+        return triangle.get_current()
+
+    @staticmethod
+    def solve_top_down(input_filename):
+        """
+        Explore all the possible routes from top to bottom, calculate sums of
+        all the paths and select the greatest.
+        """
+        triangle = TriangleTopDown(input_filename)
+        steps = triangle.get_size() - 1
+        sums = []
+        for path in range(0, 2 ** steps):
+            triangle.reset_focus()
+            path_sum = triangle.get_current()
+            for step in range(0, steps):
+                if path & ((2 ** (steps - 1)) >> step):
+                    triangle.move_right()
+                else:
+                    triangle.move_left()
+                path_sum += triangle.get_current()
+            sums.append(path_sum)
+        return max(sums)
+
+
+class TriangleBottomUp(object):
+    def __init__(self, input_filename):
+        self.__data = self.load_data(input_filename)
+        self.__x = 0
+        self.__y = 0
+
+    def focus_last_level(self):
+        """
+        Select last (bottom) level of the triangle, first element.
+        """
+        self.__x = 0
+        self.__y = len(self.__data) - 1
+
+    def focus_next_node(self):
+        """
+        Select next element in the current level of the triangle.
+        """
+        self.__x += 1
+
+    def focus_previous_level(self):
+        """
+        Select previous (upper) level of the triangle, first element.
+        """
+        self.__x = 0
+        self.__y -= 1
+
+    def get_current(self):
+        """
+        Retrieve a number that is in focus.
+        """
+        return int(self.__data[self.__y][self.__x])
+
+    def get_left_leaf(self):
+        """
+        Retrieve a number that is in left leaf of focused node.
+        """
+        return int(self.__data[self.__y + 1][self.__x])
+
+    def get_right_leaf(self):
+        """
+        Retrieve a number that is in right leaf of focused node.
+        """
+        return int(self.__data[self.__y + 1][self.__x + 1])
+
+    def check_last_node(self):
+        """
+        Determine whether the node is last in selected level.
+        """
+        if self.__x == (len(self.__data[self.__y])) - 1:
+            return True
+        return False
+
+    def check_root(self):
+        """
+        Determine whether the node is root of the triangle.
+        """
+        if self.__x == 0 and self.__y == 0:
+            return True
+        return False
+
+    @staticmethod
+    def load_data(input_filename):
+        """
+        Load the triangle data into the structure from given file.
+        """
+        data = []
+        with open(input_filename) as csv_file:
+            reader = csv.reader(csv_file, delimiter=' ')
+            for row in reader:
+                data.append(row)
+        return data
+
+    def update(self, value):
+        """
+        Update the value of selected node.
+        """
+        self.__data[self.__y][self.__x] = str(value)
+
+
+class TriangleTopDown(object):
     def __init__(self, filename):
         self.__data = self.load_data(filename)
         self.__x = 0
@@ -84,21 +195,22 @@ class TriangleBF():
         """
         Retrieve a number that is in focus.
         """
-        return (int(self.__data[self.__y][self.__x]))
+        return int(self.__data[self.__y][self.__x])
 
     def get_size(self):
         """
         Retrieve size (length/width) if the triangle.
         """
-        return (len(self.__data))
+        return len(self.__data)
 
-    def load_data(self, filename):
+    @staticmethod
+    def load_data(filename):
         """
         Load the triangle data into the structure from given file.
         """
         data = []
-        with open(filename) as csvfile:
-            reader = csv.reader(csvfile, delimiter = ' ')
+        with open(filename) as csv_file:
+            reader = csv.reader(csv_file, delimiter=' ')
             for row in reader:
                 data.append(row)
         return data
@@ -107,7 +219,6 @@ class TriangleBF():
         """
         Move the focus down-left.
         """
-        # self.__x = self.__x
         self.__y += 1
 
     def move_right(self):
@@ -125,148 +236,9 @@ class TriangleBF():
         self.__y = 0
 
 
-def solve_brute_force(filename):
-    """
-    Explore all the possible routes from top to bottow, calculate sums of all
-    the paths and select the greatest.
-    """
-    triangle = TriangleBF(filename)
-    steps = triangle.get_size() - 1
-    sums = []
-    for path in range(0, (2 ** steps)):
-        triangle.reset_focus()
-        path_sum = triangle.get_current()
-        # print path, ":", triangle.get_current(),
-        for step in range(0, steps):
-            if (path & ((2 ** (steps - 1)) >> step)):
-                triangle.move_right()
-            else:
-                triangle.move_left()
-            path_sum += triangle.get_current()
-            # print "+", triangle.get_current(),
-        sums.append(path_sum)
-        # print "=", path_sum
-
-    return max(sums)
-
-
-# Solution: Bottom-Up #########################################################
-
-class TriangleBU():
-    """
-    Data structure for solving the triangle sum with bottom-up algorithm.
-    """
-    def __init__(self, filename):
-        self.__data = self.load_data(filename)
-        self.__x = 0
-        self.__y = 0
-
-    def focus_last_level(self):
-        """
-        Select last (bottom) level of the triangle, first element.
-        """
-        self.__x = 0
-        self.__y = len(self.__data) - 1
-
-    def focus_next_node(self):
-        """
-        Select next element in the current level of the triangle.
-        """
-        self.__x += 1
-
-    def focus_prev_level(self):
-        """
-        Select previous (upper) level of the triangle, first element.
-        """
-        self.__x = 0
-        self.__y -= 1
-
-    def get_current(self):
-        """
-        Retrieve a number that is in focus.
-        """
-        return (int(self.__data[self.__y][self.__x]))
-
-    def get_left_leaf(self):
-        """
-        Retrieve a number that is in left leaf of focused node.
-        """
-        return (int(self.__data[self.__y + 1][self.__x]))
-
-    def get_right_leaf(self):
-        """
-        Retrieve a number that is in right leaf of focused node.
-        """
-        return (int(self.__data[self.__y + 1][self.__x + 1]))
-
-    def check_last_node(self):
-        """
-        Determine whether the node is last in selected level.
-        """
-        if (self.__x == (len(self.__data[self.__y])) - 1):
-            return True
-        return False
-
-    def check_root(self):
-        """
-        Determine whether the node is root of the triangle.
-        """
-        if ((self.__x == 0) and (self.__y == 0)):
-            return True
-        return False
-
-    def load_data(self, filename):
-        """
-        Load the triangle data into the structure from given file.
-        """
-        data = []
-        with open(filename) as csvfile:
-            reader = csv.reader(csvfile, delimiter = ' ')
-            for row in reader:
-                data.append(row)
-        return data
-
-    def update(self, value):
-        """
-        Update the value of selected node.
-        """
-        self.__data[self.__y][self.__x] = str(value)
-
-
-def solve_bottom_up(filename):
-    """
-    Go from bottom of the triangle upwards. Update each node with a sum of his
-    value and greater value of his leaves. After reaching root of the
-    triangle, return its updated value.
-    """
-    triangle = TriangleBU(filename)
-    triangle.focus_last_level()
-    while (1):
-        if (triangle.check_root()):
-            break
-        triangle.focus_prev_level()
-        while (1):
-            triangle.update(triangle.get_current() + max(triangle.get_left_leaf(), triangle.get_right_leaf()))
-            if (triangle.check_last_node()):
-                break
-            triangle.focus_next_node()
-
-    return triangle.get_current()
-
-
-# Main ########################################################################
-
 def main():
-    result = solve_brute_force(INPUT_FILE)
-    print("Solution: Brute Force")
-    print("\tThe maximum total from top to bottom of the triangle is", result)
-
-    result = solve_bottom_up(INPUT_FILE)
-    print("Solution: Bottom-Up")
-    print("\tThe maximum total from top to bottom of the triangle is", result)
-
-    return 0
+    print(Solution().solve(INPUT_FILENAME))
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
