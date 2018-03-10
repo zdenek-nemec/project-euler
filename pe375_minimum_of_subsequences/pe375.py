@@ -1,27 +1,13 @@
 #!/usr/bin/env python3
 
 """
-PE375: Minimum of subsequences
-------------------------------
+PE-375: Minimum of subsequences
+-------------------------------
 
-Name: pe375.py
+Solution for Project Euler Problem 375 (https://projecteuler.net/problem=375).
 
-Author: Zdenek Nemec <zdenek.nemec@artin.cz>
-
-Version: 0.2 (2017-11-27)
-
-Synopsis:
-    ``pe375.py``
-
-Examples:
-    ``pe375.py``
-
-Description:
-    Solution for Project Euler Problem 375
-    (https://projecteuler.net/problem=375).
-
-    Let :math:`S_{n}` be an integer sequence produced with the following
-    pseudo-random number generator:
+Let :math:`S_{n}` be an integer sequence produced with the following
+pseudo-random number generator:
 
 .. math::
 
@@ -31,56 +17,29 @@ Description:
 
 ..
 
-    Let :math:`A(i,j)` be the minimum of the numbers
-    :math:`S_{i}, S_{i+1}, ..., S_{j}` for :math:`i \\leq j`.
+Let :math:`A(i,j)` be the minimum of the numbers
+:math:`S_{i}, S_{i+1}, ..., S_{j}` for :math:`i \\leq j`.
 
-    Let :math:`M(N) = \\sum A(i,j)` for :math:`1 \\leq i \\leq j \\leq N`.
+Let :math:`M(N) = \\sum A(i,j)` for :math:`1 \\leq i \\leq j \\leq N`.
 
-    We can verify that :math:`M(10) = 432256955` and
-    :math:`M(10 \\ 000) = 3264567774119`.
+We can verify that :math:`M(10) = 432256955` and
+:math:`M(10 \\ 000) = 3264567774119`.
 
-    Find :math:`M(2 \\ 000 \\ 000 \\ 000)`.
+Find :math:`M(2 \\ 000 \\ 000 \\ 000)`.
+
+.. warning:: Open
 """
 
 
-import sys
-
-
-LUCKY_NUMBER = 7
-
-
-# Solution: Brute Force #######################################################
-
-class LuckyNumbers():
-    def __init__(self):
-        self.current_number = LUCKY_NUMBER
-
-    def assign_lucky_number(self, number):
-        self.current_number = number
+class Solution(object):
+    @staticmethod
+    def solve():
         return 0
 
-    def get_current_number(self):
-        return self.current_number
-
-
-def solve_brute_force():
-    """
-    Docstring for solve_brute_force().
-    """
-    lucky_numbers = LuckyNumbers()
-    # lucky_numbers.assign_lucky_number(9)
-    return lucky_numbers.get_current_number()
-
-
-# Main ########################################################################
 
 def main():
-    result = solve_brute_force()
-    print("Solution: Brute Force")
-    print("\tThe lucky number is <dramatic pause>", result)
-
-    return 0
+    print(Solution().solve())
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

@@ -1,27 +1,13 @@
 #!/usr/bin/env python3
 
 """
-PE030: Digit fifth powers
--------------------------
+PE-030: Digit fifth powers
+--------------------------
 
-Name: pe030.py
+Solution for Project Euler Problem 30 (https://projecteuler.net/problem=30).
 
-Author: Zdenek Nemec <zdenek.nemec@artin.cz>
-
-Version: 0.2 (2017-11-27)
-
-Synopsis:
-    ``pe030.py``
-
-Examples:
-    ``pe030.py``
-
-Description:
-    Solution for Project Euler Problem 30
-    (https://projecteuler.net/problem=30).
-
-    Surprisingly there are only three numbers that can be written as the sum
-    of fourth powers of their digits:
+Surprisingly there are only three numbers that can be written as the sum of
+fourth powers of their digits:
 
 .. math::
 
@@ -33,67 +19,26 @@ Description:
 
 ..
 
-    As :math:`1 = 1^4` is not a sum it is not included.
+As :math:`1 = 1^4` is not a sum it is not included.
 
-    The sum of these numbersis :math:`1637 + 8208 + 9474 = 19316`.
+The sum of these numbers is :math:`1637 + 8208 + 9474 = 19316`.
 
-    Find the sum of all the numbers that can be written as the sum of fifth
-    powers of their digits.
+Find the sum of all the numbers that can be written as the sum of fifth powers
+of their digits.
+
+.. warning:: Open
 """
 
 
-import sys
+class Solution(object):
+    @staticmethod
+    def solve():
+        return 0
 
-
-LUCKY_NUMBER = 7
-
-
-# Solution: Brute Force #######################################################
-
-class LuckyNumbers():
-    """
-    Docstring for the class.
-    """
-    def __init__(self, number):
-        """
-        Docstring for the initialisation method.
-        """
-        self.__number = 0
-        self.__assign(number)
-
-    def __assign(self, number):
-        """
-        Docstring for a private method.
-        """
-        self.__number = number
-
-    def get_lucky(self):
-        """
-        Docstring for a public method.
-        """
-        return self.__number
-
-
-def solve_brute_force(number):
-    """
-    Docstring for a function.
-    """
-    lucky_numbers = LuckyNumbers(number)
-    return lucky_numbers.get_lucky()
-
-
-# Main ########################################################################
 
 def main():
-    """
-    Docstring for the main function.
-    """
-    result = solve_brute_force(LUCKY_NUMBER)
-    print("Solution: Brute Force")
-    print("\tThe lucky number is <dramatic pause> %d!" % (result))
-
-    return 0
+    print(Solution().solve())
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
