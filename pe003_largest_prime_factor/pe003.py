@@ -18,44 +18,44 @@ import math
 NUMBER = 600851475143
 
 
-class Factors(object):
-    @staticmethod
-    def get_factors(number):
+class Numbers(object):
+    def __init__(self, number):
+        self._number = number
+
+    def get_factors(self):
         factors = []
         possible_factor = 2
-        cap = math.sqrt(number)
+        cap = math.sqrt(self._number)
         while possible_factor <= cap:
-            if number % possible_factor == 0:
+            if self._number % possible_factor == 0:
                 factors.append(possible_factor)
-                factors.append(number / possible_factor)
+                factors.append(self._number // possible_factor)
             possible_factor += 1
         factors.sort()
         return factors
 
-
-class Primes(object):
-    @staticmethod
-    def is_prime(number):
-        prime_flag = False
-        if not Factors().get_factors(number):
-            prime_flag = True
-        return prime_flag
+    def is_prime(self):
+        if not self.get_factors():
+            return True
+        return False
 
 
 class Solution(object):
-    @staticmethod
-    def solve(number):
-        factors = Factors().get_factors(number)
+    def __init__(self, number):
+        self._number = number
+
+    def solve(self):
+        factors = Numbers(self._number).get_factors()
         primes = []
         for selected_factor in factors:
-            if Primes().is_prime(selected_factor):
+            if Numbers(selected_factor).is_prime():
                 primes.append(selected_factor)
         primes.sort()
         return primes[-1]
 
 
 def main():
-    print(Solution().solve(NUMBER))
+    print(Solution(NUMBER).solve())
 
 
 if __name__ == '__main__':

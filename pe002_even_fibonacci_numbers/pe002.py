@@ -40,14 +40,17 @@ class Fibonacci(object):
 
 
 class Solution(object):
-    @staticmethod
-    def solve(start, limit):
-        fibonacci = Fibonacci(start)
-        while fibonacci.get_last() < limit:
+    def __init__(self, start, limit):
+        self._start = start
+        self._limit = limit
+
+    def solve(self):
+        fibonacci = Fibonacci(self._start)
+        while fibonacci.get_last() < self._limit:
             fibonacci.add_next()
         sum_of_even = 0
         for number in fibonacci.get_all():
-            if number > limit:
+            if number > self._limit:
                 break
             elif number % 2 == 0:
                 sum_of_even += number
@@ -55,7 +58,7 @@ class Solution(object):
 
 
 def main():
-    print(Solution().solve(START, LIMIT))
+    print(Solution(START, LIMIT).solve())
 
 
 if __name__ == '__main__':

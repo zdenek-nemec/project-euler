@@ -7,6 +7,8 @@ PE-000: Template
 Solution for Project Euler Problem 0 (https://projecteuler.net/problem=0).
 
 This is just a template.
+
+.. warning:: Open
 """
 
 
@@ -14,13 +16,15 @@ LUCKY_NUMBER = 7
 
 
 class Solution(object):
-    @staticmethod
-    def solve(lucky_number):
-        return lucky_number
+    def __init__(self, lucky_number):
+        self._lucky_number = lucky_number
+
+    def solve(self):
+        return self._lucky_number
 
 
 def main():
-    print(Solution().solve(LUCKY_NUMBER))
+    print(Solution(LUCKY_NUMBER).solve())
 
 
 if __name__ == '__main__':

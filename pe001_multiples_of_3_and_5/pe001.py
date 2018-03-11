@@ -18,19 +18,26 @@ LIMIT = 1000
 
 
 class Solution(object):
-    @staticmethod
-    def solve(multipliers, limit):
+    def __init__(self, multipliers, limit):
+        self._multipliers = multipliers
+        self._limit = limit
+
+    def _is_multiple(self, number):
+        for multiplier in self._multipliers:
+            if number % multiplier == 0:
+                return True
+        return False
+
+    def solve(self):
         sum_of_multiples = 0
-        for number in range(limit):
-            for selected_multiplier in multipliers:
-                if number % selected_multiplier == 0:
-                    sum_of_multiples += number
-                    break
+        for number in range(self._limit):
+            if self._is_multiple(number):
+                sum_of_multiples += number
         return sum_of_multiples
 
 
 def main():
-    print(Solution().solve(MULTIPLIERS, LIMIT))
+    print(Solution(MULTIPLIERS, LIMIT).solve())
 
 
 if __name__ == '__main__':
