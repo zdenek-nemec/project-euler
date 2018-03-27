@@ -20,19 +20,22 @@ DIGITS = 3
 
 
 class Factors(object):
-    @staticmethod
-    def get_factors(number):
-        factors = [[1, number]]
+    def __init__(self, number):
+        self._number = number
+
+    def _get_factors(self):
+        factors = [[1, self._number]]
         possible_factor = 2
-        cap = math.sqrt(number)
+        cap = math.sqrt(self._number)
         while possible_factor <= cap:
-            if number % possible_factor == 0:
-                factors.append([possible_factor, number // possible_factor])
+            if self._number % possible_factor == 0:
+                factors.append([possible_factor,
+                                self._number // possible_factor])
             possible_factor += 1
         return factors
 
-    def get_factors_with_digits(self, number, digits):
-        factors = self.get_factors(number)
+    def get_factors_with_digits(self, digits):
+        factors = self._get_factors()
         selected_factors = []
         for pair in factors:
             length_0 = len(str(pair[0]))
@@ -44,34 +47,36 @@ class Factors(object):
 
 class Palindromes(object):
     def __init__(self, length):
-        self._current = int(length * "9")
+        self._current = int(length * '9')
 
-    def get_current(self):
-        return self._current
-
-    def get_lower(self):
+    def _get_lower(self):
         length = len(str(self._current))
         segment = str(int(str(self._current)[:length // 2]) - 1)
         return int(segment + segment[::-1])
 
+    def get_current(self):
+        return self._current
+
     def set_lower(self):
-        self._current = self.get_lower()
+        self._current = self._get_lower()
 
 
 class Solution(object):
-    @staticmethod
-    def solve(digits):
-        factors = Factors()
-        palindromes = Palindromes(digits * 2)
-        while not(
-            factors.get_factors_with_digits(palindromes.get_current(), digits)
-        ):
+    def __init__(self, digits):
+        self._digits = digits
+
+    def solve(self):
+        palindromes = Palindromes(self._digits * 2)
+        while True:
+            factors = Factors(palindromes.get_current())
+            if factors.get_factors_with_digits(self._digits):
+                break
             palindromes.set_lower()
         return palindromes.get_current()
 
 
 def main():
-    print(Solution().solve(DIGITS))
+    print(Solution(DIGITS).solve())
 
 
 if __name__ == '__main__':

@@ -10,12 +10,12 @@ class SolutionTest(unittest.TestCase):
         [3, 906609]
     ])
     def test_solve(self, digits, expected_palindrome):
-        palindrome = Solution().solve(digits)
+        returned_palindrome = Solution(digits).solve()
         self.assertEqual(
-            palindrome,
+            returned_palindrome,
             expected_palindrome,
             'The result should be %d but is %d.'
-            % (expected_palindrome, palindrome))
+            % (expected_palindrome, returned_palindrome))
 
 
 if __name__ == '__main__':
