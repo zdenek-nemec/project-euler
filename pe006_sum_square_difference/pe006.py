@@ -34,11 +34,13 @@ LIMIT = 100
 
 
 class Solution(object):
-    @staticmethod
-    def solve(top):
+    def __init__(self, limit):
+        self._limit = limit
+
+    def solve(self):
         sum_of_squares = 0
         square_of_sums = 0
-        for i in range(1, top + 1):
+        for i in range(1, self._limit + 1):
             sum_of_squares += i ** 2
             square_of_sums += i
         square_of_sums **= 2
@@ -46,7 +48,7 @@ class Solution(object):
 
 
 def main():
-    print(Solution().solve(LIMIT))
+    print(Solution(LIMIT).solve())
 
 
 if __name__ == '__main__':
