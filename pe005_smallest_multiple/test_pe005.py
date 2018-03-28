@@ -10,12 +10,12 @@ class SolutionTest(unittest.TestCase):
         [20, 232792560]
     ])
     def test_solve(self, divisor_limit, expected_number):
-        number = Solution().solve(divisor_limit)
+        returned_number = Solution(divisor_limit).solve()
         self.assertEqual(
-            number,
+            returned_number,
             expected_number,
             'The result should be %d but is %d.'
-            % (expected_number, number))
+            % (expected_number, returned_number))
 
 
 if __name__ == '__main__':

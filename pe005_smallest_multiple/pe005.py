@@ -18,35 +18,35 @@ LIMIT = 20
 
 
 class Solution(object):
-    @staticmethod
-    def get_seed(top):
-        prime_list = [2, 3, 5, 7, 11, 13, 17, 19]
-        seed = 1
-        for prime in prime_list:
-            if prime < top:
-                seed *= prime
-        return seed
+    def __init__(self, limit):
+        self._limit = limit
 
-    @staticmethod
-    def check_divisibility(number, top):
-        for divisor in range(top, 1, -1):
-            if (number % divisor) != 0:
+    def _check_divisibility(self, number):
+        for divisor in range(self._limit, 1, -1):
+            if number % divisor != 0:
                 return False
         return True
 
-    @staticmethod
-    def solve(top):
-        seed = Solution().get_seed(top)
+    def _get_seed(self):
+        prime_list = [2, 3, 5, 7, 11, 13, 17, 19]
+        seed = 1
+        for prime in prime_list:
+            if prime < self._limit:
+                seed *= prime
+        return seed
+
+    def solve(self):
+        seed = self._get_seed()
         number = seed
         while True:
             number += seed
-            if Solution().check_divisibility(number, top):
+            if self._check_divisibility(number):
                 break
         return number
 
 
 def main():
-    print(Solution().solve(LIMIT))
+    print(Solution(LIMIT).solve())
 
 
 if __name__ == '__main__':
