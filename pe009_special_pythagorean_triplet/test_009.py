@@ -7,15 +7,14 @@ from pe009_special_pythagorean_triplet.pe009 import Solution
 class SolutionTest(unittest.TestCase):
     @parameterized.expand([
         [12, 60],
-        [1000, 31875000]
-    ])
+        [1000, 31875000]])
     def test_solve(self, target_sum, expected_product):
-        product = Solution().solve(target_sum)
+        returned_product = Solution(target_sum).solve()
         self.assertEqual(
-            product,
+            returned_product,
             expected_product,
             'The result should be %d but is %d.'
-            % (expected_product, product))
+            % (expected_product, returned_product))
 
 
 if __name__ == '__main__':

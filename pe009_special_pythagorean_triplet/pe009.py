@@ -26,27 +26,29 @@ TARGET_SUM = 1000
 
 
 class Solution(object):
-    @staticmethod
-    def solve(target_sum):
+    def __init__(self, target_sum):
+        self._target_sum = target_sum
+
+    def solve(self):
         """
         Pre-calculate array of second powers. Then search for sum of
         :math:`a^2 + b^2` which is in the array. Upon finding such set, check
         sum of a, b and c. If it matches, return product of a, b and c.
         """
         powers = [0]
-        for number in range(1, target_sum + 1):
+        for number in range(1, self._target_sum + 1):
             powers.append(number ** 2)
-        for a in range(1, target_sum + 1):
-            for b in range(a + 1, target_sum - a):
+        for a in range(1, self._target_sum + 1):
+            for b in range(a + 1, self._target_sum - a):
                 cc = powers[a] + powers[b]
                 if cc in powers:
-                    if a + b + powers.index(cc) == target_sum:
+                    if a + b + powers.index(cc) == self._target_sum:
                         return a * b * powers.index(cc)
         return -1
 
 
 def main():
-    print(Solution().solve(TARGET_SUM))
+    print(Solution(TARGET_SUM).solve())
 
 
 if __name__ == '__main__':
