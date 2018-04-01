@@ -18,38 +18,44 @@ import math
 LIMIT = 2000000
 
 
-class Solution(object):
-    @staticmethod
-    def check_prime_divisor(number, primes):
-        current_limit = math.sqrt(number)
-        for item in primes:
-            if number % item == 0:
-                return False
-            if item > current_limit:
-                break
-        return True
+class Primes(object):
+    def __init__(self):
+        self._primes = []
 
-    @staticmethod
-    def solve(limit):
-        """
-        Every number that is not a prime should be divisible by a prime. Go
-        through all odd numbers after 2 and check their divisibility by primes.
-        When checking primes, remember that any number n can have only one
-        prime factor greater than square root of n.
-        """
-        primes = [2, 3]
-        number = 3
+    def add_prime(self, number):
+        self._primes.append(number)
+
+    def check_prime(self, number):
+        for prime in self._primes:
+            if number % prime == 0:
+                return 0
+            if prime > math.sqrt(number):
+                break
+        return 1
+
+    def get_all(self):
+        return self._primes
+
+
+class Solution(object):
+    def __init__(self, limit):
+        self._limit = limit
+
+    def solve(self):
+        number = 1
+        primes = Primes()
+        primes.add_prime(2)
         while True:
             number += 2
-            if number >= limit:
+            if number >= self._limit:
                 break
-            if Solution().check_prime_divisor(number, primes):
-                primes.append(number)
-        return sum(primes)
+            if primes.check_prime(number):
+                primes.add_prime(number)
+        return sum(primes.get_all())
 
 
 def main():
-    print(Solution().solve(LIMIT))
+    print(Solution(LIMIT).solve())
 
 
 if __name__ == '__main__':
