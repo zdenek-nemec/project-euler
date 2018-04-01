@@ -46,17 +46,16 @@ SEQUENCE = 4
 
 
 class Solution(object):
-    @staticmethod
-    def solve(input_filename, sequence):
+    def __init__(self, input_filename, sequence):
+        self._input_filename = input_filename
+        self._sequence = sequence
+
+    def solve(self):
         numbers = []
-        with open(input_filename, 'r') as csv_file:
+        with open(self._input_filename, 'r') as csv_file:
             reader = csv.reader(csv_file, delimiter=' ')
             for row in reader:
                 numbers.append(list(map(int, row)))
-        assert len(numbers) == 20, 'The matrix is expected to have 20 rows.'
-        for row in numbers:
-            assert len(row) == 20, 'Each row of the matrix is expected to ' \
-                                   'have 20 values (columns).'
 
         rows = len(numbers)
         columns = len(numbers[0])
@@ -66,7 +65,7 @@ class Solution(object):
         for y in range(0, rows):
             for x in range(0, columns):
                 product = 1
-                for i in range(0, sequence):
+                for i in range(0, self._sequence):
                     if x + i >= columns:
                         product = 0
                         break
@@ -78,7 +77,7 @@ class Solution(object):
         for x in range(0, columns):
             for y in range(0, rows):
                 product = 1
-                for i in range(0, sequence):
+                for i in range(0, self._sequence):
                     if y + i >= rows:
                         product = 0
                         break
@@ -90,7 +89,7 @@ class Solution(object):
         for y in range(0, rows):
             for x in range(0, columns):
                 product = 1
-                for i in range(0, sequence):
+                for i in range(0, self._sequence):
                     if x + i >= columns or y + i >= rows:
                         product = 0
                         break
@@ -102,7 +101,7 @@ class Solution(object):
         for y in range(0, rows):
             for x in range(0, columns):
                 product = 1
-                for i in range(0, sequence):
+                for i in range(0, self._sequence):
                     if x - i < 0 or y + i >= rows:
                         product = 0
                         break
@@ -114,7 +113,7 @@ class Solution(object):
 
 
 def main():
-    print(Solution().solve(INPUT_FILENAME, SEQUENCE))
+    print(Solution(INPUT_FILENAME, SEQUENCE).solve())
 
 
 if __name__ == '__main__':
