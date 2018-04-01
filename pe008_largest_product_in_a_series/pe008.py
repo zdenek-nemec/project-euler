@@ -40,10 +40,13 @@ DIGITS = 13
 
 
 class Solution(object):
-    @staticmethod
-    def solve(input_filename, digits):
+    def __init__(self, input_filename, digits):
+        self._input_filename = input_filename
+        self._digits = digits
+
+    def solve(self):
         number = []
-        with open(input_filename, 'r') as input_file:
+        with open(self._input_filename, 'r') as input_file:
             while True:
                 c = input_file.read(1)
                 if c < '0' or c > '9':
@@ -54,11 +57,11 @@ class Solution(object):
         max_product = 0
         product_index = 0
         while True:
-            if product_index + digits > len(number):
+            if product_index + self._digits > len(number):
                 break
             product = number[product_index]
-            for series_index in range(1, digits):
-                # Optimisation: zero product
+            for series_index in range(1, self._digits):
+                # Optimisation: Zero product
                 if number[product_index + series_index] == 0:
                     product = 0
                     break
@@ -71,7 +74,7 @@ class Solution(object):
 
 
 def main():
-    print(Solution().solve(INPUT_FILENAME, DIGITS))
+    print(Solution(INPUT_FILENAME, DIGITS).solve())
 
 
 if __name__ == '__main__':
