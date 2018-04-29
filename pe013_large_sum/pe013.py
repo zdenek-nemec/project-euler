@@ -116,23 +116,17 @@ INPUT_FILENAME = 'numbers.txt'
 
 
 class Solution(object):
-    @staticmethod
-    def solve(input_filename):
-        numbers = []
-        with open(input_filename, 'rb') as input_file:
-            for row in input_file:
-                numbers.append(int(row))
-        assert len(numbers) == 100, 'Expected number of numbers is 100.'
-        for row in numbers:
-            assert len(str(row)) == 50,\
-                'Each number is expected to have 50 digits.'
-        return Solution().solve_brute_force(numbers)
+    def __init__(self, input_filename):
+        self._input_filename = input_filename
 
-    @staticmethod
-    def solve_brute_force(numbers):
+    def solve(self):
+        number_list = []
+        with open(self._input_filename, 'rb') as input_file:
+            for number in input_file:
+                number_list.append(int(number))
         total_sum = 0
-        for item in numbers:
-            total_sum += item
+        for number in number_list:
+            total_sum += number
         return int(str(total_sum)[:10])
 
     @staticmethod
@@ -166,7 +160,7 @@ class Solution(object):
 
 
 def main():
-    print(Solution().solve(INPUT_FILENAME))
+    print(Solution(INPUT_FILENAME).solve())
 
 
 if __name__ == '__main__':
