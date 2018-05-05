@@ -17,9 +17,11 @@ POWER = 1000
 
 
 class Solution(object):
-    @staticmethod
-    def solve(power):
-        number = pow(2, power)
+    def __init__(self, power):
+        self._power = power
+
+    def solve(self):
+        number = pow(2, self._power)
         number_string = str(number)
         power_sum = 0
         for c in number_string:
@@ -28,7 +30,7 @@ class Solution(object):
 
 
 def main():
-    print(Solution().solve(POWER))
+    print(Solution(POWER).solve())
 
 
 if __name__ == '__main__':
