@@ -6,15 +6,14 @@ from pe022_names_scores.pe022 import Solution
 
 class SolutionTest(unittest.TestCase):
     @parameterized.expand([
-        ['p022_names.txt', 871198282]
-    ])
+        ['p022_names.txt', 871198282]])
     def test_solve(self, input_filename, expected_total):
-        calculated_total = Solution().solve(input_filename)
+        returned_total = Solution(input_filename).solve()
         self.assertEqual(
-            calculated_total,
+            returned_total,
             expected_total,
             'The result should be %d but is %d.'
-            % (expected_total, calculated_total))
+            % (expected_total, returned_total))
 
 
 if __name__ == '__main__':
