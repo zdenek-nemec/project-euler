@@ -129,35 +129,6 @@ class Solution(object):
             total_sum += number
         return int(str(total_sum)[:10])
 
-    @staticmethod
-    def solve_substring(numbers):
-        """
-        Let us assume we are limited by 32-bit integer (0 .. 4294967295).
-        Therefore no sum can exceed 4294967295: 4294967295 / 50 = 85899345.92,
-        length of 8 characters. To be safe we use substring with length of 7
-        characters. Make a sum of numbers from last 7 characters, store last 7
-        characters of the sum and proceed with higher 7 characters (from the sum
-        and new numbers).
-        """
-        partial_sum = 0
-        total_sum = ''
-        start_position = 50
-        while start_position > 0:
-            start_position -= 7
-            for item in numbers:
-                if start_position >= 0:
-                    substring = str(item)[start_position:start_position+7]
-                    partial_sum += int(substring)
-                else:
-                    substring = str(item)[0:start_position + 7]
-                    partial_sum += int(substring)
-            if start_position <= 0:
-                total_sum = str(partial_sum) + total_sum
-            else:
-                total_sum = str(partial_sum)[-7:] + total_sum
-                partial_sum = int(str(partial_sum)[:-7])
-        return int(total_sum[:10])
-
 
 def main():
     print(Solution(INPUT_FILENAME).solve())
