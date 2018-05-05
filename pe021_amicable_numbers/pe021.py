@@ -8,7 +8,7 @@ Solution for Project Euler Problem 21 (https://projecteuler.net/problem=21).
 
 Let :math:`d(n)` be defined as the sum of proper divisors of :math:`n` (numbers
 less than :math:`n` which divide evenly into :math:`n`). If :math:`d(a) = b` and
-math:`d(b) = a`, where :math:`a \\neq b`, then :math:`a` and :math:`b` are an
+:math:`d(b) = a`, where :math:`a \\neq b`, then :math:`a` and :math:`b` are an
 amicable pair and each of :math:`a` and :math:`b` are called amicable numbers.
 
 For example, the proper divisors of 220 are 1, 2, 4, 5, 10, 11, 20, 22, 44, 55
@@ -26,7 +26,9 @@ LIMIT = 10000
 
 
 class Divisors(object):
-    """Proper divisors for numbers."""
+    """
+    Proper divisors for numbers.
+    """
     def __init__(self, number=1):
         """
         Setup Divisors object and load first number.
@@ -63,42 +65,10 @@ class Divisors(object):
 
 
 class Solution(object):
-    @staticmethod
-    def get_divisors(number):
-        """
-        Retrieve all proper divisors of the number.
-        """
-        divisors = []
-        for i in range(number - 1, 0, -1):
-            if number % i == 0:
-                divisors.append(i)
-        return divisors
+    def __init__(self, limit):
+        self._limit = limit
 
-    @staticmethod
-    def solve(limit):
-        return Solution().solve_optimized(limit)
-
-    @staticmethod
-    def solve_brute_force(limit):
-        """
-        Calculate list of sums for all the numbers under the limit, then go
-        through the list and search for amicable numbers, return their sum.
-        """
-        sums = [0]
-        for i in range(1, limit + 1):
-            sums.append(sum(Solution().get_divisors(i)))
-        amicable = []
-        for i in range(1, limit + 1):
-            if sums[i] > limit:
-                continue
-            if sums[i] == i:
-                continue
-            if sums[sums[i]] == i:
-                amicable.append(i)
-        return sum(amicable)
-
-    @staticmethod
-    def solve_optimized(limit):
+    def solve(self):
         """
         Go through all the numbers under the limit, calculate sums in pairs and
         check whether the numbers are amicable pair or not. Return the sum of
@@ -107,12 +77,12 @@ class Solution(object):
         divisors = Divisors()
         sums = {}
         amicable = []
-        for i in range(1, limit + 1):
+        for i in range(1, self._limit + 1):
             if i in amicable:
                 continue
             if i not in sums:
                 sums[i] = sum(divisors.get(i))
-            if sums[i] > limit or sums[i] == i:
+            if sums[i] > self._limit or sums[i] == i:
                 continue
             if sums[i] not in sums:
                 sums[sums[i]] = sum(divisors.get(sums[i]))
@@ -123,7 +93,7 @@ class Solution(object):
 
 
 def main():
-    print(Solution().solve(LIMIT))
+    print(Solution(LIMIT).solve())
 
 
 if __name__ == '__main__':
