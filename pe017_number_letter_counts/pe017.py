@@ -23,19 +23,10 @@ TOP = 1000
 
 
 class Solution(object):
-    @staticmethod
-    def count_letters(phrase):
-        """
-        Count only letters 'a'..'z' in a string.
-        """
-        letter_count = 0
-        for c in phrase:
-            if 'a' <= c <= 'z':
-                letter_count += 1
-        return letter_count
+    def __init__(self, top):
+        self._top = top
 
-    @staticmethod
-    def solve(top):
+    def solve(self):
         """
         Generate names for all the numbers, count the letters and make a sum.
         """
@@ -54,7 +45,7 @@ class Solution(object):
             12: 'twelve',
             13: 'thirteen',
             14: 'fourteen',
-            15: 'fifteem',
+            15: 'fifteen',
             16: 'sixteen',
             17: 'seventeen',
             18: 'eighteen',
@@ -72,7 +63,7 @@ class Solution(object):
         }
 
         total_letters = 0
-        for i in range(1, top + 1):
+        for i in range(1, self._top + 1):
             number = i
             number_name = ''
             if number >= 1000:
@@ -88,18 +79,23 @@ class Solution(object):
                 if number != 0:
                     number_name += ' and '
             if number > 20 and number % 10 != 0:
-                number_name += names[number // 10 * 10] \
-                               + '-' \
-                               + names[number % 10]
+                number_name += (names[number // 10 * 10] +
+                               '-' +
+                               names[number % 10])
             elif number != 0:
                 number_name += names[number]
-            total_letters += Solution().count_letters(number_name)
+
+            letter_count = 0
+            for c in number_name:
+                if 'a' <= c <= 'z':
+                    letter_count += 1
+            total_letters += letter_count
 
         return total_letters
 
 
 def main():
-    print(Solution().solve(TOP))
+    print(Solution(TOP).solve())
 
 
 if __name__ == '__main__':
