@@ -14,7 +14,7 @@ For example,
 3628800`, and the sum of the digits in the number :math:`10!` is
 :math:`3 + 6 + 2 + 8 + 8 + 0 + 0 = 27`.
 
-Find the sum of the digits in the number :math:`100!`.
+Find the sum of the digits in the number :math:`100!`
 """
 
 
@@ -22,14 +22,16 @@ NUMBER = 100
 
 
 class Solution(object):
-    @staticmethod
-    def solve(number):
+    def __init__(self, number):
+        self._number = number
+
+    def solve(self):
         """
         Using a cycle calculate the factorial and cycle through the string of
         that number afterwards and make a sum.
         """
         factorial = 1
-        for i in range(1, number + 1):
+        for i in range(1, self._number + 1):
             factorial *= i
         factorial_sum = 0
         for c in str(factorial):
@@ -38,7 +40,7 @@ class Solution(object):
 
 
 def main():
-    print(Solution().solve(NUMBER))
+    print(Solution(NUMBER).solve())
 
 
 if __name__ == '__main__':
