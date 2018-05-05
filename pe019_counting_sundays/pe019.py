@@ -76,11 +76,11 @@ class Calendar(object):
         """
         return self._data[len(self._data) - 1]
 
-    def _get_last_year(self):
+    def _get_last_day(self):
         """
-        Retrieve year of the last entry in the calendar.
+        Retrieve day (number) of the last entry in the calendar.
         """
-        return self._data[len(self._data) - 1][0]
+        return self._data[len(self._data) - 1][2]
 
     def _get_last_month(self):
         """
@@ -88,11 +88,11 @@ class Calendar(object):
         """
         return self._data[len(self._data) - 1][1]
 
-    def _get_last_day(self):
+    def _get_last_year(self):
         """
-        Retrieve day (number) of the last entry in the calendar.
+        Retrieve year of the last entry in the calendar.
         """
-        return self._data[len(self._data) - 1][2]
+        return self._data[len(self._data) - 1][0]
 
     def _get_max_day(self):
         """
@@ -117,6 +117,15 @@ class Calendar(object):
         else:
             return 31
 
+    def print_data(self):
+        """
+        Print the whole generated calendar.
+        """
+        i = 0
+        for entry in self._data:
+            print(i, ':', entry)
+            i += 1
+
     def search(self, search, start, end):
         """
         Search for specified key. If value is zero or empty string, ignore it.
@@ -134,29 +143,25 @@ class Calendar(object):
                 match.append(entry)
         return match
 
-    def print_data(self):
-        """
-        Print the whole generated calendar.
-        """
-        i = 0
-        for entry in self._data:
-            print(i, ':', entry)
-            i += 1
-
 
 class Solution(object):
-    @staticmethod
-    def solve(seed, search, start, end):
+    def __init__(self, seed, search, start, end):
+        self._seed = seed
+        self._search = search
+        self._start = start
+        self._end = end
+
+    def solve(self):
         """
         Generate the calendar from the seed to the end date. Search for the
         given key.
         """
-        calendar = Calendar(seed, end)
-        return len(calendar.search(search, start, end))
+        calendar = Calendar(self._seed, self._end)
+        return len(calendar.search(self._search, self._start, self._end))
 
 
 def main():
-    print(Solution().solve(SEED, SEARCH, START, END))
+    print(Solution(SEED, SEARCH, START, END).solve())
 
 
 if __name__ == '__main__':
