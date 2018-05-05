@@ -23,21 +23,24 @@ SIZE_Y = 20
 
 
 class Solution(object):
-    @staticmethod
-    def solve(size_x, size_y):
+    def __init__(self, size_x, size_y):
+        self._size_x = size_x
+        self._size_y = size_y
+
+    def solve(self):
         matrix = []
-        for x in range(0, size_x + 1):
+        for x in range(0, self._size_x + 1):
             matrix.append([])
-            for y in range(0, size_y + 1):
+            for y in range(0, self._size_y + 1):
                 if x == 0 or y == 0:
                     matrix[x].append(1)
                 else:
                     matrix[x].append(matrix[x][y-1] + matrix[x-1][y])
-        return matrix[size_x][size_y]
+        return matrix[self._size_x][self._size_y]
 
 
 def main():
-    print(Solution().solve(SIZE_X, SIZE_Y))
+    print(Solution(SIZE_X, SIZE_Y).solve())
 
 
 if __name__ == '__main__':
