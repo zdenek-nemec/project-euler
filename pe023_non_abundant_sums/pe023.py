@@ -34,21 +34,19 @@ import time
 
 # LIMIT = 28123
 LIMIT = 3000
+# LIMIT = 100
 
 
 class Divisors(object):
     @staticmethod
     def get_divisors(number):
-        divisor_list = [1]
-        for divisor in range(1, int(math.sqrt(number)) + 1):
-            if divisor in divisor_list:
-                continue
+        divisors = [1]
+        for divisor in range(2, int(math.sqrt(number)) + 1):
             if number % divisor == 0:
-                if divisor not in divisor_list:
-                    divisor_list.append(divisor)
-                if number // divisor not in divisor_list:
-                    divisor_list.append(number // divisor)
-        return divisor_list
+                divisors.append(divisor)
+                if number // divisor not in divisors:
+                    divisors.append(number // divisor)
+        return sorted(divisors)
 
 
 class SolutionA(object):
@@ -102,6 +100,15 @@ class SolutionB(object):
                     break
                 if abundant_sum not in abundant_sum_list:
                     abundant_sum_list.append(abundant_sum)
+        # for a in abundant_list:
+        #     for b in abundant_list:
+        #         if b < a:
+        #             continue
+        #         abundant_sum = a + b
+        #         if abundant_sum > limit:
+        #             break
+        #         if abundant_sum not in abundant_sum_list:
+        #             abundant_sum_list.append(abundant_sum)
         total_sum = 0
         for number in range(1, limit + 1):
             if number not in abundant_sum_list:
@@ -118,23 +125,41 @@ class SolutionC(object):
     """
     @staticmethod
     def solve(limit):
-        abundant_list = []
+        abundants = []
         for number in range(1, limit + 1):
             divisors = Divisors().get_divisors(number)
             if sum(divisors) > number:
-                abundant_list.append(number)
+                abundants.append(number)
         total_sum = 0
         index = 0
         for number in range(1, limit + 1):
-            if index < len(abundant_list):
-                if number == 2 * abundant_list[index]:
+            if index < len(abundants):
+                if number == 2 * abundants[index]:
                     continue
-                if index < len(abundant_list) - 1:
-                    if number == abundant_list[index] + abundant_list[index+1]:
+                if index < len(abundants) - 1:
+                    if number == abundants[index] + abundants[index+1]:
                         index += 1
                         continue
             total_sum += number
         return total_sum
+
+
+class SolutionD(object):
+    """
+    ...
+
+    .. note: Open
+    """
+    def solve(self, limit):
+        abundants = []
+        for number in range(1, limit + 1):
+            divisors = Divisors().get_divisors(number)
+            if sum(divisors) > number:
+                abundants.append(number)
+        print(abundants)
+        for number in abundants:
+            if number % 2 != 0 and number % 5 != 0:
+                print(number)
 
 
 class Solution(object):
@@ -154,6 +179,11 @@ class Solution(object):
 
         start_timestamp = time.time()
         print('C:', SolutionC().solve(self._limit))
+        end_timestamp = time.time()
+        print('%.2f' % (end_timestamp - start_timestamp))
+
+        start_timestamp = time.time()
+        print('D:', SolutionD().solve(self._limit))
         end_timestamp = time.time()
         print('%.2f' % (end_timestamp - start_timestamp))
 
