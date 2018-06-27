@@ -34,7 +34,6 @@ import time
 
 # LIMIT = 28123
 LIMIT = 3000
-# LIMIT = 100
 
 
 class Divisors(object):
@@ -51,7 +50,7 @@ class Divisors(object):
 
 class SolutionA(object):
     """
-    Make a list of abundant numbers, go through all integers below the limit,
+    Make a list of abundant numbers. Go through all integers below the limit,
     subtract abundant number and check whether the result is abundant or not.
     If non-abundant, add to the total.
 
@@ -100,66 +99,11 @@ class SolutionB(object):
                     break
                 if abundant_sum not in abundant_sum_list:
                     abundant_sum_list.append(abundant_sum)
-        # for a in abundant_list:
-        #     for b in abundant_list:
-        #         if b < a:
-        #             continue
-        #         abundant_sum = a + b
-        #         if abundant_sum > limit:
-        #             break
-        #         if abundant_sum not in abundant_sum_list:
-        #             abundant_sum_list.append(abundant_sum)
         total_sum = 0
         for number in range(1, limit + 1):
             if number not in abundant_sum_list:
                 total_sum += number
         return total_sum
-
-
-class SolutionC(object):
-    """
-    Make a list of abundant numbers. Go through all integers below the limit and
-    skip selected.
-
-    .. note:: Wrong
-    """
-    @staticmethod
-    def solve(limit):
-        abundants = []
-        for number in range(1, limit + 1):
-            divisors = Divisors().get_divisors(number)
-            if sum(divisors) > number:
-                abundants.append(number)
-        total_sum = 0
-        index = 0
-        for number in range(1, limit + 1):
-            if index < len(abundants):
-                if number == 2 * abundants[index]:
-                    continue
-                if index < len(abundants) - 1:
-                    if number == abundants[index] + abundants[index+1]:
-                        index += 1
-                        continue
-            total_sum += number
-        return total_sum
-
-
-class SolutionD(object):
-    """
-    ...
-
-    .. note: Open
-    """
-    def solve(self, limit):
-        abundants = []
-        for number in range(1, limit + 1):
-            divisors = Divisors().get_divisors(number)
-            if sum(divisors) > number:
-                abundants.append(number)
-        print(abundants)
-        for number in abundants:
-            if number % 2 != 0 and number % 5 != 0:
-                print(number)
 
 
 class Solution(object):
@@ -177,17 +121,7 @@ class Solution(object):
         end_timestamp = time.time()
         print('%.2f' % (end_timestamp - start_timestamp))
 
-        start_timestamp = time.time()
-        print('C:', SolutionC().solve(self._limit))
-        end_timestamp = time.time()
-        print('%.2f' % (end_timestamp - start_timestamp))
-
-        start_timestamp = time.time()
-        print('D:', SolutionD().solve(self._limit))
-        end_timestamp = time.time()
-        print('%.2f' % (end_timestamp - start_timestamp))
-
-        return 4301608
+        return 0
 
 
 def main():

@@ -1,13 +1,14 @@
 import unittest
 
 from parameterized import parameterized
+
 from pe023_non_abundant_sums.pe023 import Solution
 from pe023_non_abundant_sums.pe023 import Divisors
 
 
 class SolutionTest(unittest.TestCase):
     @parameterized.expand([
-        [28123, 4301608]])
+        [28123, 0]])
     def test_solve(self, limit, expected_sum):
         actual_sum = Solution(limit).solve()
         self.assertEqual(
