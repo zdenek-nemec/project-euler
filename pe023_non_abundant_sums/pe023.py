@@ -39,21 +39,18 @@ LIMIT = 3000
 class Divisors(object):
     @staticmethod
     def get_divisors(number):
-        divisor_list = [1]
-        for divisor in range(1, int(math.sqrt(number)) + 1):
-            if divisor in divisor_list:
-                continue
+        divisors = [1]
+        for divisor in range(2, int(math.sqrt(number)) + 1):
             if number % divisor == 0:
-                if divisor not in divisor_list:
-                    divisor_list.append(divisor)
-                if number // divisor not in divisor_list:
-                    divisor_list.append(number // divisor)
-        return divisor_list
+                divisors.append(divisor)
+                if number // divisor not in divisors:
+                    divisors.append(number // divisor)
+        return sorted(divisors)
 
 
 class SolutionA(object):
     """
-    Make a list of abundant numbers, go through all integers below the limit,
+    Make a list of abundant numbers. Go through all integers below the limit,
     subtract abundant number and check whether the result is abundant or not.
     If non-abundant, add to the total.
 
@@ -109,34 +106,6 @@ class SolutionB(object):
         return total_sum
 
 
-class SolutionC(object):
-    """
-    Make a list of abundant numbers. Go through all integers below the limit and
-    skip selected.
-
-    .. note:: Wrong
-    """
-    @staticmethod
-    def solve(limit):
-        abundant_list = []
-        for number in range(1, limit + 1):
-            divisors = Divisors().get_divisors(number)
-            if sum(divisors) > number:
-                abundant_list.append(number)
-        total_sum = 0
-        index = 0
-        for number in range(1, limit + 1):
-            if index < len(abundant_list):
-                if number == 2 * abundant_list[index]:
-                    continue
-                if index < len(abundant_list) - 1:
-                    if number == abundant_list[index] + abundant_list[index+1]:
-                        index += 1
-                        continue
-            total_sum += number
-        return total_sum
-
-
 class Solution(object):
     def __init__(self, limit):
         self._limit = limit
@@ -152,12 +121,7 @@ class Solution(object):
         end_timestamp = time.time()
         print('%.2f' % (end_timestamp - start_timestamp))
 
-        start_timestamp = time.time()
-        print('C:', SolutionC().solve(self._limit))
-        end_timestamp = time.time()
-        print('%.2f' % (end_timestamp - start_timestamp))
-
-        return 4301608
+        return 0
 
 
 def main():
