@@ -13,6 +13,24 @@ class Divisors(object):
         return sorted(divisors)
 
 
+class Fibonacci(object):
+    def __init__(self, start):
+        self._series = start
+
+    def append_next(self):
+        next_number = self._series[-2] + self._series[-1]
+        self._series.append(next_number)
+
+    def get_all(self):
+        return self._series
+
+    def get_last(self):
+        return self._series[-1]
+
+    def get_length(self):
+        return len(self._series)
+
+
 def main():
     print('Hello World!')
 

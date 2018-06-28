@@ -31,7 +31,7 @@ characters.
 by the Project Euler site.
 
 ### Tests
-* Unit tests utilize expected and returned variables.
+* Unit tests utilize expected and actual variables.
 * Unit tests have at least a parameterized test for Solution().solve() method.
 * The solution passes all the unit tests.
 
