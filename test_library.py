@@ -3,9 +3,10 @@ import unittest
 from parameterized import parameterized
 
 from library import Divisors
+from library import Fibonacci
 
 
-class DivisorsTest(unittest.TestCase):
+class TestDivisorsMethods(unittest.TestCase):
     @parameterized.expand([
         [9, [1, 3]],
         [10, [1, 2, 5]],
@@ -21,5 +22,25 @@ class DivisorsTest(unittest.TestCase):
             % number)
 
 
+class TestFibonacciMethods(unittest.TestCase):
+    @parameterized.expand([
+        [[1, 1], 3, 2],
+        [[1, 1], 4, 3],
+        [[1, 1], 5, 5],
+        [[1, 1], 6, 8],
+        [[1, 1], 7, 13]])
+    def test_append_next(self, start, length, expected_last):
+        fibonacci = Fibonacci(start)
+        while fibonacci.get_length() < length:
+            fibonacci.append_next()
+        actual_last = fibonacci.get_last()
+        self.assertEqual(
+            expected_last,
+            actual_last,
+            'Failed for start %s and length %d.'
+            % (str(start), length)
+        )
+
+
 if __name__ == '__main__':
-    pass
+    unittest.main()
