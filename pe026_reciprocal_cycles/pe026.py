@@ -41,15 +41,19 @@ recurring cycle in its decimal fraction part.
 """
 
 
+LIMIT = 10
+
+
 class Solution(object):
-    @staticmethod
-    def solve():
-        return 0
+    def __init__(self, limit):
+        self._limit = limit
 
-
-def main():
-    print(Solution().solve())
+    def solve(self):
+        print(self._limit)
+        for denominator in range(2, self._limit):
+            print('1 / %d = %f' % (denominator, 1 / denominator))
+        return 7
 
 
 if __name__ == '__main__':
-    main()
+    print(Solution(LIMIT).solve())
