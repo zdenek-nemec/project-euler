@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+
 """
 PE-030: Digit fifth powers
 --------------------------
@@ -21,7 +22,7 @@ fourth powers of their digits:
 
 As :math:`1 = 1^4` is not a sum it is not included.
 
-The sum of these numbers is :math:`1637 + 8208 + 9474 = 19316`.
+The sum of these numbers is :math:`1634 + 8208 + 9474 = 19316`.
 
 Find the sum of all the numbers that can be written as the sum of fifth powers
 of their digits.
@@ -30,15 +31,24 @@ of their digits.
 """
 
 
-class Solution(object):
-    @staticmethod
-    def solve():
-        return 0
+LUCKY_NUMBER = 7
+
+
+class Solution030(object):
+    """Solution to PE-030"""
+
+    def __init__(self, number):
+        """Initialisation"""
+        self._lucky_number = number
+
+    def solve(self):
+        """Solve the issue"""
+        return self._lucky_number
 
 
 def main():
-    print(Solution().solve())
+    print(Solution030(LUCKY_NUMBER).solve())
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
