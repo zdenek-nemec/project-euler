@@ -31,23 +31,28 @@ of their digits.
 """
 
 
-LUCKY_NUMBER = 7
+POWER = 2
 
 
 class Solution030(object):
     """Solution to PE-030"""
 
-    def __init__(self, number):
+    def __init__(self, power):
         """Initialisation"""
-        self._lucky_number = number
+        self._power = power
 
     def solve(self):
         """Solve the issue"""
-        return self._lucky_number
+        powers = {}
+        for i in range(0, 10):
+            powers[i] = pow(i, self._power)
+        print(powers)
+
+        return 0
 
 
 def main():
-    print(Solution030(LUCKY_NUMBER).solve())
+    print(Solution030(POWER).solve())
 
 
 if __name__ == "__main__":
