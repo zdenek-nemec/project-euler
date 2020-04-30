@@ -1,5 +1,4 @@
 *.pyc
-.idea/codeStyles/
-.idea/workspace.xml
+.idea/*
 _build/
 _modules/
