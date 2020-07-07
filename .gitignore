@@ -2,3 +2,4 @@
 .idea/*
 _build/
 _modules/
+venv/
