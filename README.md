@@ -1,42 +1,26 @@
-# project-euler
+# Project Euler
 Zdenek versus Project Euler
 
-My solutions for Project Euler problems. Visit https://projecteuler.net/ for
-more information about the Project Euler.
+Zdenek's solutions for Project Euler problems. Visit [https://projecteuler.net/](https://projecteuler.net/) for more information about the Project Euler.
 
 ## Definition of Done
 
-### Structure
-* The problem has its own directory.
-* Python 3 is used and specified on the first line of the solution script.
-
-### Code Style
-* There is a class Solution() with init() and solve() methods.
-* The main() calls Solution().solve() with constants.
-* Classes and methods are sorted alphabetically with the exception of
-Solution(), init(), solve() and main().
-* There are no static methods.
-* Apostrophe (') is the default for the strings, not the double quotes (").
-* All names (variables, classes, methods, ...) are self-explanatory and do not
-contain abbreviations.
-* Long if statements are in parentheses with logical operator at the end of the
-line.
+* Python 3.8 is used.
+* The problem has its own directory, e.g. `project-euler/problems_pe0xx/pe001_multiples_of_3_and_5/pe001.py`.
+* Encoding is UTF-8 and line endings are CRLF.
+* Main class, e.g. `ProjectEulerProblem001()`, has `__init__()` and `solve()` methods.
+* Scripts have `main()` function and constants which are passed as inputs to the solution class.
+* Inputs for solution are saved as private variables in `__init__()` method. 
+* Double quotes character `"` is the default for the strings.
+* All names (variables, classes, methods, ...) are self-explanatory and do not contain abbreviations.
+* Long if statements are split on multiple lines with logical operator at the start of the line.
 * Closing parentheses are at the end of the last line of the block.
-* There are no code-check warnings from PyCharm and no line exceeds 80
-characters.
-* Line endings are CRLF.
-    
-### Functionality
-* The solution script can be run and displays only the result, which is accepted
-by the Project Euler site.
-
-### Tests
-* Unit tests utilize expected and actual variables.
-* Unit tests have at least a parameterized test for Solution().solve() method.
+* Static methods are in general avoided.
+* There are no code-check warnings from PyCharm.
+* ~~No line exceeds 79 characters.~~
+* The solution script can be run and displays only the result which is accepted by the Project Euler site.
+* Unit tests, e.g. `test_pe001.py`, are implemented and utilise expected and actual variables.
+* Unit tests have at least one parameterized test for the solution.
 * The solution passes all the unit tests.
-
-### Documentation
-* The header within the solution script contains complete description of the
-problem.
-* Sphinx documentation is generated without errors and does not contain any
-issues.
+* The header within the solution script contains complete description of the problem.
+* ~~Sphinx documentation is generated without errors and does not contain any issues.~~
