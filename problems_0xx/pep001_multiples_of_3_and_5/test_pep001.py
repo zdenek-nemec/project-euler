@@ -1,21 +1,21 @@
 import unittest
 
 from parameterized import parameterized
-from pe001_multiples_of_3_and_5.pe001 import Solution
+
+from problems_0xx.pep001_multiples_of_3_and_5.pep001 import ProjectEulerProblem001
 
 
-class SolutionTest(unittest.TestCase):
+class ProjectEulerProblem001Test(unittest.TestCase):
     @parameterized.expand([
         [[3, 5], 10, 23],
         [[3, 5], 1000, 233168]])
     def test_solve(self, multipliers, limit, expected_sum):
-        returned_sum = Solution(multipliers, limit).solve()
+        actual_sum = ProjectEulerProblem001(multipliers, limit).solve()
         self.assertEqual(
-            returned_sum,
             expected_sum,
-            'The result should be %d but is %d.'
-            % (expected_sum, returned_sum))
+            actual_sum,
+            "Actual and expected sums do not match.")
 
 
-if __name__ == '__main__':
-    pass
+if __name__ == "__main__":
+    unittest.main()

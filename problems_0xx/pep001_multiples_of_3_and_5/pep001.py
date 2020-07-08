@@ -1,8 +1,6 @@
-#!/usr/bin/env python3
-
 """
-PE-001: Multiples of 3 and 5
-----------------------------
+PEP-001: Multiples of 3 and 5
+-----------------------------
 
 Solution for Project Euler problem 1 (https://projecteuler.net/problem=1).
 
@@ -12,12 +10,11 @@ If we list all the natural numbers below 10 that are multiples of 3 or 5, we get
 Find the sum of all the multiples of 3 or 5 below 1000.
 """
 
-
 MULTIPLIERS = [3, 5]
 LIMIT = 1000
 
 
-class Solution(object):
+class ProjectEulerProblem001(object):
     def __init__(self, multipliers, limit):
         self._multipliers = multipliers
         self._limit = limit
@@ -37,8 +34,8 @@ class Solution(object):
 
 
 def main():
-    print(Solution(MULTIPLIERS, LIMIT).solve())
+    print(ProjectEulerProblem001(MULTIPLIERS, LIMIT).solve())
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

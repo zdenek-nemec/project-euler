@@ -1,6 +1,6 @@
 """
-PE-000: Template
-----------------
+PEP-000: Template
+-----------------
 
 Solution for Project Euler problem 0 (https://projecteuler.net/problem=0).
 
