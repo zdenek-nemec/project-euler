@@ -13,12 +13,23 @@ import os
 
 MODULES_PATH = "./_modules"
 
-
-# Main ########################################################################
+def create_modules():
+    for subdirectory in next(os.walk("./problems_0xx"))[1]:
+        filename = subdirectory[0:6] + ".rst"
+        anchor = ".. _pep%03d: \n\n" % (int(subdirectory[3:6]))
+        content = (anchor
+            + ".. automodule:: " + subdirectory[0:6] + "\n"
+            + "    :members:\n"
+            + "    :undoc-members:\n"
+            + "    :private-members:\n\n")
+        with open(MODULES_PATH + "/" + filename, "w") as f:
+            f.write(content)
 
 def main():
     if (not(os.path.exists(MODULES_PATH))):
         os.makedirs(MODULES_PATH)
+
+    create_modules()
 
     projects = []
     for subdir in next(os.walk("."))[1]:
@@ -69,6 +80,8 @@ def main():
                 + link_previous + " | :ref:`Index <index>` | " + link_next + "\n"
             with open(MODULES_PATH + "/" + filename, "w") as f:
                 f.write(content)
+
+
 
     return 0
 
