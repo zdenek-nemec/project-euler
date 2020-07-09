@@ -1,8 +1,6 @@
-#!/usr/bin/env python3
-
 """
-PE-002: Even Fibonacci numbers
-------------------------------
+PEP-002: Even Fibonacci numbers
+-------------------------------
 
 Solution for Project Euler problem 2 (https://projecteuler.net/problem=2).
 
@@ -18,7 +16,6 @@ terms. By starting with 1 and 2, the first 10 terms will be:
 By considering the terms in the Fibonacci sequence whose values do not exceed
 four million, find the sum of the even-valued terms.
 """
-
 
 START = [1, 2]
 LIMIT = 4000000
@@ -39,7 +36,7 @@ class Fibonacci(object):
         return self._numbers[-1]
 
 
-class Solution(object):
+class ProjectEulerProblem002(object):
     def __init__(self, start, limit):
         self._start = start
         self._limit = limit
@@ -58,8 +55,8 @@ class Solution(object):
 
 
 def main():
-    print(Solution(START, LIMIT).solve())
+    print(ProjectEulerProblem002(START, LIMIT).solve())
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

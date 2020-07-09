@@ -20,7 +20,7 @@
 import sys
 # sys.path.insert(0, os.path.abspath('.'))
 sys.path.append('./problems_0xx/pep001_multiples_of_3_and_5')
-sys.path.append('./pe002_even_fibonacci_numbers')
+sys.path.append('./problems_0xx/pep002_even_fibonacci_numbers')
 sys.path.append('./pe003_largest_prime_factor')
 sys.path.append('./pe004_largest_palindrome_product')
 sys.path.append('./pe005_smallest_multiple')
