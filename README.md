@@ -25,3 +25,41 @@ Zdenek's solutions for Project Euler problems. Visit [https://projecteuler.net/]
 * The solution passes all the unit tests.
 * The header within the solution script contains complete description of the problem.
 * ~~Sphinx documentation is generated without errors and does not contain any issues.~~
+
+## Review
+
+* [x] pep001_multiples_of_3_and_5
+* [x] pep002_even_fibonacci_numbers
+* [ ] pep003_largest_prime_factor
+* [ ] pep004_largest_palindrome_product
+* [ ] pep005_smallest_multiple
+* [ ] pep006_sum_square_difference
+* [ ] pep007_10001st_prime
+* [ ] pep008_largest_product_in_a_series
+* [ ] pep009_special_pythagorean_triplet
+* [ ] pep010_summation_of_primes
+* [ ] pep011_largest_product_in_a_grid
+* [ ] pep012_highly_divisible_triangular_number
+* [ ] pep013_large_sum
+* [ ] pep014_longest_collatz_sequence
+* [ ] pep015_lattice_paths
+* [ ] pep016_power_digit_sum
+* [ ] pep017_number_letter_counts
+* [ ] pep018_maximum_path_sum_i
+* [ ] pep019_counting_sundays
+* [ ] pep020_factorial_digit_sum
+* [ ] pep021_amicable_numbers
+* [ ] pep022_names_scores
+* [ ] pep023_non_abundant_sums
+* [ ] pep024_lexicographic_permutations
+* [ ] pep025_1000_digit_fibonacci_number
+* [ ] pep026_reciprocal_cycles
+* [ ] pep027_quadratic_primes
+* [ ] pep028_number_spiral_diagonals
+* [ ] pep029_distinct_powers
+* [ ] pep030_digit_fifth_powers
+* [ ] pep158_exploring_strings_for_which_only___
+* [ ] pep304_primonacci
+* [ ] pep335_gathering_the_beans
+* [ ] pep358_cyclic_numbers
+* [ ] pep375_minimum_of_subsequences
