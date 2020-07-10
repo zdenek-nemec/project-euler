@@ -30,7 +30,7 @@ Zdenek's solutions for Project Euler problems. Visit [https://projecteuler.net/]
 
 * [x] pep001_multiples_of_3_and_5
 * [x] pep002_even_fibonacci_numbers
-* [ ] pep003_largest_prime_factor
+* [x] pep003_largest_prime_factor
 * [ ] pep004_largest_palindrome_product
 * [ ] pep005_smallest_multiple
 * [ ] pep006_sum_square_difference

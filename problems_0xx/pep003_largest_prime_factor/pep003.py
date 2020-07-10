@@ -1,8 +1,6 @@
-#!/usr/bin/env python3
-
 """
-PE-003: Largest prime factor
-----------------------------
+PEP-003: Largest prime factor
+-----------------------------
 
 Solution for Project Euler problem 3 (https://projecteuler.net/problem=3).
 
@@ -11,9 +9,7 @@ The prime factors of 13195 are 5, 7, 13 and 29.
 What is the largest prime factor of the number 600851475143?
 """
 
-
 import math
-
 
 NUMBER = 600851475143
 
@@ -40,7 +36,7 @@ class Numbers(object):
         return False
 
 
-class Solution(object):
+class ProjectEulerProblem003(object):
     def __init__(self, number):
         self._number = number
 
@@ -55,8 +51,8 @@ class Solution(object):
 
 
 def main():
-    print(Solution(NUMBER).solve())
+    print(ProjectEulerProblem003(NUMBER).solve())
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
