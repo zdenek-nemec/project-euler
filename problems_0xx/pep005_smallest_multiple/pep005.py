@@ -1,8 +1,6 @@
-#!/usr/bin/env python3
-
 """
-PE-005: Smallest multiple
--------------------------
+PEP-005: Smallest multiple
+--------------------------
 
 Solution for Project Euler Problem 5 (https://projecteuler.net/problem=5).
 
@@ -13,11 +11,10 @@ What is the smallest positive number that is evenly divisible by all of the
 numbers from 1 to 20?
 """
 
-
 LIMIT = 20
 
 
-class Solution(object):
+class ProjectEulerProblem005(object):
     def __init__(self, limit):
         self._limit = limit
 
@@ -46,8 +43,8 @@ class Solution(object):
 
 
 def main():
-    print(Solution(LIMIT).solve())
+    print(ProjectEulerProblem005(LIMIT).solve())
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -1,21 +1,22 @@
 import unittest
 
 from parameterized import parameterized
-from pe005_smallest_multiple.pe005 import Solution
+
+from problems_0xx.pep005_smallest_multiple.pep005 import ProjectEulerProblem005
 
 
-class SolutionTest(unittest.TestCase):
+class ProjectEulerProblem005Test(unittest.TestCase):
     @parameterized.expand([
         [10, 2520],
         [20, 232792560]])
     def test_solve(self, divisor_limit, expected_number):
-        returned_number = Solution(divisor_limit).solve()
+        actual_number = ProjectEulerProblem005(divisor_limit).solve()
         self.assertEqual(
-            returned_number,
             expected_number,
-            'The result should be %d but is %d.'
-            % (expected_number, returned_number))
+            actual_number,
+            "Failed for divisor limit %d."
+            % divisor_limit)
 
 
-if __name__ == '__main__':
-    pass
+if __name__ == "__main__":
+    unittest.main()
