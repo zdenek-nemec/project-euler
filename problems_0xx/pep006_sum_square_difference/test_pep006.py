@@ -1,21 +1,22 @@
 import unittest
 
 from parameterized import parameterized
-from pe006_sum_square_difference.pe006 import Solution
+
+from problems_0xx.pep006_sum_square_difference.pep006 import ProjectEulerProblem006
 
 
-class SolutionTest(unittest.TestCase):
+class ProjectEulerProblem006Test(unittest.TestCase):
     @parameterized.expand([
         [10, 2640],
         [100, 25164150]])
     def test_solve(self, number_limit, expected_difference):
-        returned_difference = Solution(number_limit).solve()
+        actual_difference = ProjectEulerProblem006(number_limit).solve()
         self.assertEqual(
-            returned_difference,
             expected_difference,
-            'The result should be %d but is %d.'
-            % (expected_difference, returned_difference))
+            actual_difference,
+            "Failed for number limit %d."
+            % number_limit)
 
 
-if __name__ == '__main__':
-    pass
+if __name__ == "__main__":
+    unittest.main()
