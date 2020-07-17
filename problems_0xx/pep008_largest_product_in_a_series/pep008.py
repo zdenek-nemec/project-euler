@@ -1,10 +1,8 @@
-#!/usr/bin/env python3
-
 """
-PE-008: Largest product in a series
------------------------------------
+PEP-008: Largest product in a series
+------------------------------------
 
-Solution for Project Euler Problem 8 (https://projecteuler.net/problem=8).
+Solution for Project Euler problem 8 (https://projecteuler.net/problem=8).
 
 The four adjacent digits in the 1000-digit number that have the greatest product
 are :math:`9 \\times 9 \\times 8 \\times 9 = 5832`.
@@ -34,25 +32,24 @@ Find the thirteen adjacent digits in the 1000-digit number that have the
 greatest product. What is the value of this product?
 """
 
-
-INPUT_FILENAME = 'number.txt'
+INPUT_FILENAME = "number.txt"
 DIGITS = 13
 
 
-class Solution(object):
+class ProjectEulerProblem008(object):
     def __init__(self, input_filename, digits):
         self._input_filename = input_filename
         self._digits = digits
 
     def solve(self):
         number = []
-        with open(self._input_filename, 'r') as input_file:
+        with open(self._input_filename, "r") as input_file:
             while True:
                 c = input_file.read(1)
-                if c < '0' or c > '9':
+                if c < "0" or c > "9":
                     break
                 number.append(int(c))
-        assert len(number) == 1000, 'Number is expected to have 1000 digits.'
+        assert len(number) == 1000, "Number is expected to have 1000 digits."
 
         max_product = 0
         product_index = 0
@@ -74,8 +71,8 @@ class Solution(object):
 
 
 def main():
-    print(Solution(INPUT_FILENAME, DIGITS).solve())
+    print(ProjectEulerProblem008(INPUT_FILENAME, DIGITS).solve())
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
