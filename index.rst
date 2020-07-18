@@ -12,17 +12,17 @@ Zdenek versus Project Euler
 My solutions for Project Euler problems. Visit https://projecteuler.net/ for
 more information about the Project Euler.
 
-Open
-====
+.. Open
+.. ====
 
-.. toctree::
-    :maxdepth: 1
-    :glob:
+.. .. toctree::
+..     :maxdepth: 1
+..     :glob:
 
-    /_modules/open_pe*
+..     /_modules/open_pe*
 
-Solved
-======
+.. Solved
+.. ======
 
 .. toctree::
     :maxdepth: 1
