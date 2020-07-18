@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 """
 PEP-009: Special Pythagorean triplet
 ------------------------------------
