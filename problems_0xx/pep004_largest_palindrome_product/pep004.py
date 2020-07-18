@@ -70,9 +70,5 @@ class ProjectEulerProblem004(object):
         return palindromes.get_current()
 
 
-def main():
-    print(ProjectEulerProblem004(DIGITS).solve())
-
-
 if __name__ == "__main__":
-    main()
+    print(ProjectEulerProblem004(DIGITS).solve())

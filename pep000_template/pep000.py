@@ -20,9 +20,5 @@ class ProjectEulerProblem000(object):
         return self._lucky_number
 
 
-def main():
-    print(ProjectEulerProblem000(LUCKY_NUMBER).solve())
-
-
 if __name__ == "__main__":
-    main()
+    print(ProjectEulerProblem000(LUCKY_NUMBER).solve())

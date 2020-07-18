@@ -42,9 +42,5 @@ class ProjectEulerProblem005(object):
         return number
 
 
-def main():
-    print(ProjectEulerProblem005(LIMIT).solve())
-
-
 if __name__ == "__main__":
-    main()
+    print(ProjectEulerProblem005(LIMIT).solve())

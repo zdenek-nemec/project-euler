@@ -70,9 +70,5 @@ class ProjectEulerProblem008(object):
         return max_product
 
 
-def main():
-    print(ProjectEulerProblem008(INPUT_FILENAME, DIGITS).solve())
-
-
 if __name__ == "__main__":
-    main()
+    print(ProjectEulerProblem008(INPUT_FILENAME, DIGITS).solve())

@@ -46,9 +46,5 @@ class ProjectEulerProblem009(object):
         return -1
 
 
-def main():
-    print(ProjectEulerProblem009(TARGET_SUM).solve())
-
-
 if __name__ == "__main__":
-    main()
+    print(ProjectEulerProblem009(TARGET_SUM).solve())

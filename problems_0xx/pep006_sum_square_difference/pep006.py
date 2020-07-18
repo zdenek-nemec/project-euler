@@ -44,9 +44,5 @@ class ProjectEulerProblem006(object):
         return square_of_sums - sum_of_squares
 
 
-def main():
-    print(ProjectEulerProblem006(LIMIT).solve())
-
-
 if __name__ == "__main__":
-    main()
+    print(ProjectEulerProblem006(LIMIT).solve())

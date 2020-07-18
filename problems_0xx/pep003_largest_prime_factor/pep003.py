@@ -50,9 +50,5 @@ class ProjectEulerProblem003(object):
         return primes[-1]
 
 
-def main():
-    print(ProjectEulerProblem003(NUMBER).solve())
-
-
 if __name__ == "__main__":
-    main()
+    print(ProjectEulerProblem003(NUMBER).solve())

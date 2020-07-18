@@ -51,9 +51,5 @@ class ProjectEulerProblem007(object):
         return number
 
 
-def main():
-    print(ProjectEulerProblem007(POSITION).solve())
-
-
 if __name__ == "__main__":
-    main()
+    print(ProjectEulerProblem007(POSITION).solve())
