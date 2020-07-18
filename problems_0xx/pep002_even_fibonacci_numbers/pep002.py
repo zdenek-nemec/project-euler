@@ -54,9 +54,5 @@ class ProjectEulerProblem002(object):
         return sum_of_even
 
 
-def main():
-    print(ProjectEulerProblem002(START, LIMIT).solve())
-
-
 if __name__ == "__main__":
-    main()
+    print(ProjectEulerProblem002(START, LIMIT).solve())

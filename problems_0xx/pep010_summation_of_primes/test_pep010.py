@@ -1,21 +1,22 @@
 import unittest
 
 from parameterized import parameterized
-from pe010_summation_of_primes.pe010 import Solution
+
+from problems_0xx.pep010_summation_of_primes.pep010 import ProjectEulerProblem010
 
 
-class SolutionTest(unittest.TestCase):
+class ProjectEulerProblem010Test(unittest.TestCase):
     @parameterized.expand([
         [10, 17],
         [2000000, 142913828922]])
     def test_solve(self, limit, expected_sum):
-        returned_sum = Solution(limit).solve()
+        actual_sum = ProjectEulerProblem010(limit).solve()
         self.assertEqual(
-            returned_sum,
             expected_sum,
-            'The result should be %d but is %d.'
-            % (expected_sum, returned_sum))
+            actual_sum,
+            "Failed for the limit %d."
+            % limit)
 
 
-if __name__ == '__main__':
-    pass
+if __name__ == "__main__":
+    unittest.main()

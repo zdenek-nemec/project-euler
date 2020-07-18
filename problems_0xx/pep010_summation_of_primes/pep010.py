@@ -1,19 +1,15 @@
-#!/usr/bin/env python3
-
 """
-PE-010: Summation of primes
----------------------------
+PEP-010: Summation of primes
+----------------------------
 
-Solution for Project Euler Problem 10 (https://projecteuler.net/problem=10).
+Solution for Project Euler problem 10 (https://projecteuler.net/problem=10).
 
 The sum of the primes below 10 is :math:`2 + 3 + 5 + 7 = 17`.
 
 Find the sum of all the primes below two million.
 """
 
-
 import math
-
 
 LIMIT = 2000000
 
@@ -37,7 +33,7 @@ class Primes(object):
         return self._primes
 
 
-class Solution(object):
+class ProjectEulerProblem010(object):
     def __init__(self, limit):
         self._limit = limit
 
@@ -54,9 +50,5 @@ class Solution(object):
         return sum(primes.get_all())
 
 
-def main():
-    print(Solution(LIMIT).solve())
-
-
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    print(ProjectEulerProblem010(LIMIT).solve())

@@ -1,21 +1,22 @@
 import unittest
 
 from parameterized import parameterized
-from pe004_largest_palindrome_product.pe004 import Solution
+
+from problems_0xx.pep004_largest_palindrome_product.pep004 import ProjectEulerProblem004
 
 
-class SolutionTest(unittest.TestCase):
+class ProjectEulerProblem004Test(unittest.TestCase):
     @parameterized.expand([
         [2, 9009],
         [3, 906609]])
     def test_solve(self, digits, expected_palindrome):
-        returned_palindrome = Solution(digits).solve()
+        actual_palindrome = ProjectEulerProblem004(digits).solve()
         self.assertEqual(
-            returned_palindrome,
             expected_palindrome,
-            'The result should be %d but is %d.'
-            % (expected_palindrome, returned_palindrome))
+            actual_palindrome,
+            "Failed for %d digits."
+            % digits)
 
 
-if __name__ == '__main__':
-    pass
+if __name__ == "__main__":
+    unittest.main()

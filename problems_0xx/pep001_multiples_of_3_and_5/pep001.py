@@ -33,9 +33,5 @@ class ProjectEulerProblem001(object):
         return sum_of_multiples
 
 
-def main():
-    print(ProjectEulerProblem001(MULTIPLIERS, LIMIT).solve())
-
-
 if __name__ == "__main__":
-    main()
+    print(ProjectEulerProblem001(MULTIPLIERS, LIMIT).solve())

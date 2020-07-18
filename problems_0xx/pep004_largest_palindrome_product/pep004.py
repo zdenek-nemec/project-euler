@@ -1,8 +1,6 @@
-#!/usr/bin/env python3
-
 """
-PE-004: Largest palindrome product
-----------------------------------
+PEP-004: Largest palindrome product
+-----------------------------------
 
 Solution for Project Euler problem 4 (https://projecteuler.net/problem=4).
 
@@ -12,9 +10,7 @@ the product of two 2-digit numbers is :math:`9009 = 91 \\times 99`.
 Find the largest palindrome made from the product of two 3-digit numbers.
 """
 
-
 import math
-
 
 DIGITS = 3
 
@@ -29,8 +25,7 @@ class Factors(object):
         cap = math.sqrt(self._number)
         while possible_factor <= cap:
             if self._number % possible_factor == 0:
-                factors.append([possible_factor,
-                                self._number // possible_factor])
+                factors.append([possible_factor, self._number // possible_factor])
             possible_factor += 1
         return factors
 
@@ -61,7 +56,7 @@ class Palindromes(object):
         self._current = self._get_lower()
 
 
-class Solution(object):
+class ProjectEulerProblem004(object):
     def __init__(self, digits):
         self._digits = digits
 
@@ -75,9 +70,5 @@ class Solution(object):
         return palindromes.get_current()
 
 
-def main():
-    print(Solution(DIGITS).solve())
-
-
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    print(ProjectEulerProblem004(DIGITS).solve())

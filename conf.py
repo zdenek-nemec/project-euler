@@ -18,42 +18,24 @@
 #
 # import os
 import sys
+from os import listdir
+
 # sys.path.insert(0, os.path.abspath('.'))
-sys.path.append('./problems_0xx/pep001_multiples_of_3_and_5')
-sys.path.append('./problems_0xx/pep002_even_fibonacci_numbers')
-sys.path.append('./problems_0xx/pep003_largest_prime_factor')
-sys.path.append('./pe004_largest_palindrome_product')
-sys.path.append('./pe005_smallest_multiple')
-sys.path.append('./pe006_sum_square_difference')
-sys.path.append('./pe007_10001st_prime')
-sys.path.append('./pe008_largest_product_in_a_series')
-sys.path.append('./pe009_special_pythagorean_triplet')
-sys.path.append('./pe010_summation_of_primes')
-sys.path.append('./pe011_largest_product_in_a_grid')
-sys.path.append('./pe012_highly_divisible_triangular_number')
-sys.path.append('./pe013_large_sum')
-sys.path.append('./pe014_longest_collatz_sequence')
-sys.path.append('./pe015_lattice_paths')
-sys.path.append('./pe016_power_digit_sum')
-sys.path.append('./pe017_number_letter_counts')
-sys.path.append('./pe018_maximum_path_sum_i')
-sys.path.append('./pe019_counting_sundays')
-sys.path.append('./pe020_factorial_digit_sum')
-sys.path.append('./pe021_amicable_numbers')
-sys.path.append('./pe022_names_scores')
-sys.path.append('./pe023_non_abundant_sums')
-sys.path.append('./pe024_lexicographic_permutations')
-sys.path.append('./pe025_1000_digit_fibonacci_number')
-sys.path.append('./pe026_reciprocal_cycles')
-sys.path.append('./pe027_quadratic_primes')
-sys.path.append('./pe028_number_spiral_diagonals')
-sys.path.append('./pe029_distinct_powers')
-sys.path.append('./pe030_digit_fifth_powers')
-sys.path.append('./pe158_exploring_strings_for_which_only___')
-sys.path.append('./pe304_primonacci')
-sys.path.append('./pe335_gathering_the_beans')
-sys.path.append('./pe358_cyclic_numbers')
-sys.path.append('./pe375_minimum_of_subsequences')
+
+"""
+Scan PEP directories and add them to `sys.path`.
+"""
+path = "."
+categories = []
+for directory in listdir(path):
+    if directory[:9] == "problems_" and directory[-2:] == "xx":
+        categories.append(directory)
+peps = []
+for category in categories:
+    for directory in listdir(path + "/" + category):
+        peps.append(path + "/" + category + "/" + directory)
+for pep in peps:
+    sys.path.append(pep)
 
 # -- General configuration ------------------------------------------------
 

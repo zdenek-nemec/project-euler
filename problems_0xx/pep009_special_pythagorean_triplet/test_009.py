@@ -1,21 +1,22 @@
 import unittest
 
 from parameterized import parameterized
-from pe009_special_pythagorean_triplet.pe009 import Solution
+
+from problems_0xx.pep009_special_pythagorean_triplet.pep009 import ProjectEulerProblem009
 
 
-class SolutionTest(unittest.TestCase):
+class ProjectEulerProblem009Test(unittest.TestCase):
     @parameterized.expand([
         [12, 60],
         [1000, 31875000]])
     def test_solve(self, target_sum, expected_product):
-        returned_product = Solution(target_sum).solve()
+        actual_product = ProjectEulerProblem009(target_sum).solve()
         self.assertEqual(
-            returned_product,
             expected_product,
-            'The result should be %d but is %d.'
-            % (expected_product, returned_product))
+            actual_product,
+            "Failed for target sum %d."
+            % target_sum)
 
 
-if __name__ == '__main__':
-    pass
+if __name__ == "__main__":
+    unittest.main()

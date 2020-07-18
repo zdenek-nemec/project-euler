@@ -1,10 +1,8 @@
-#!/usr/bin/env python3
-
 """
-PE-006: Sum square difference
------------------------------
+PEP-006: Sum square difference
+------------------------------
 
-Solution for Project Euler Problem 6 (https://projecteuler.net/problem=6).
+Solution for Project Euler problem 6 (https://projecteuler.net/problem=6).
 
 The sum of the squares of the first ten natural numbers is,
 
@@ -29,11 +27,10 @@ Find the difference between the sum of the squares of the first one hundred
 natural numbers and the square of the sum.
 """
 
-
 LIMIT = 100
 
 
-class Solution(object):
+class ProjectEulerProblem006(object):
     def __init__(self, limit):
         self._limit = limit
 
@@ -47,9 +44,5 @@ class Solution(object):
         return square_of_sums - sum_of_squares
 
 
-def main():
-    print(Solution(LIMIT).solve())
-
-
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    print(ProjectEulerProblem006(LIMIT).solve())

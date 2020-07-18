@@ -1,10 +1,8 @@
-#!/usr/bin/env python3
-
 """
-PE-009: Special Pythagorean triplet
------------------------------------
+PEP-009: Special Pythagorean triplet
+------------------------------------
 
-Solution for Project Euler Problem 9 (https://projecteuler.net/problem=9).
+Solution for Project Euler problem 9 (https://projecteuler.net/problem=9).
 
 A Pythagorean triplet is a set of three natural numbers, :math:`a < b < c`, for
 which,
@@ -21,11 +19,10 @@ There exists exactly one Pythagorean triplet for which :math:`a + b + c = 1000`.
 Find the product :math:`abc`.
 """
 
-
 TARGET_SUM = 1000
 
 
-class Solution(object):
+class ProjectEulerProblem009(object):
     def __init__(self, target_sum):
         self._target_sum = target_sum
 
@@ -47,9 +44,5 @@ class Solution(object):
         return -1
 
 
-def main():
-    print(Solution(TARGET_SUM).solve())
-
-
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    print(ProjectEulerProblem009(TARGET_SUM).solve())
