@@ -1,10 +1,8 @@
-#!/usr/bin/env python3
-
 """
-PE-013: Large sum
------------------
+PEP-013: Large sum
+------------------
 
-Solution for Project Euler Problem 13 (https://projecteuler.net/problem=13).
+Solution for Project Euler problem 13 (https://projecteuler.net/problem=13).
 
 Work out the first ten digits of the sum of the following one-hundred 50-digit
 numbers.
@@ -111,17 +109,16 @@ numbers.
 | 53503534226472524250874054075591789781264330331690
 """
 
+INPUT_FILENAME = "numbers.txt"
 
-INPUT_FILENAME = 'numbers.txt'
 
-
-class Solution(object):
+class ProjectEulerProblem013(object):
     def __init__(self, input_filename):
         self._input_filename = input_filename
 
     def solve(self):
         number_list = []
-        with open(self._input_filename, 'rb') as input_file:
+        with open(self._input_filename, "rb") as input_file:
             for number in input_file:
                 number_list.append(int(number))
         total_sum = 0
@@ -131,8 +128,8 @@ class Solution(object):
 
 
 def main():
-    print(Solution(INPUT_FILENAME).solve())
+    print(ProjectEulerProblem013(INPUT_FILENAME).solve())
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
