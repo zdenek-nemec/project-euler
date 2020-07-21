@@ -1,20 +1,21 @@
 import unittest
 
 from parameterized import parameterized
-from pe014_longest_collatz_sequence.pe014 import Solution
+
+from problems_0xx.pep014_longest_collatz_sequence.pep014 import ProjectEulerProblem014
 
 
-class SolutionTest(unittest.TestCase):
+class ProjectEulerProblem014Test(unittest.TestCase):
     @parameterized.expand([
         [1000000, 837799]])
     def test_solve(self, limit, expected_number):
-        returned_number = Solution(limit).solve()
+        returned_number = ProjectEulerProblem014(limit).solve()
         self.assertEqual(
-            returned_number,
             expected_number,
-            'The result should be %d but is %d.'
-            % (expected_number, returned_number))
+            returned_number,
+            "Failed for limit %d."
+            % limit)
 
 
-if __name__ == '__main__':
-    pass
+if __name__ == "__main__":
+    unittest.main()
