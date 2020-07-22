@@ -9,10 +9,10 @@ class ProjectEulerProblem014Test(unittest.TestCase):
     @parameterized.expand([
         [1000000, 837799]])
     def test_solve(self, limit, expected_number):
-        returned_number = ProjectEulerProblem014(limit).solve()
+        actual_number = ProjectEulerProblem014(limit).solve()
         self.assertEqual(
             expected_number,
-            returned_number,
+            actual_number,
             "Failed for limit %d."
             % limit)
 
