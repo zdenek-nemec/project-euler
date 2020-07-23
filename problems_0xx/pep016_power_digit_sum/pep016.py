@@ -1,10 +1,8 @@
-#!/usr/bin/env python3
-
 """
-PE-016: Power digit sum
------------------------
+PEP-016: Power digit sum
+------------------------
 
-Solution for Project Euler Problem 16 (https://projecteuler.net/problem=16).
+Solution for Project Euler problem 16 (https://projecteuler.net/problem=16).
 
 :math:`2^{15} = 32768` and the sum of its digits is
 :math:`3 + 2 + 7 + 6 + 8 = 26`.
@@ -12,11 +10,10 @@ Solution for Project Euler Problem 16 (https://projecteuler.net/problem=16).
 What is the sum of the digits of the number :math:`2^{1000}`?
 """
 
-
 POWER = 1000
 
 
-class Solution(object):
+class ProjectEulerProblem016(object):
     def __init__(self, power):
         self._power = power
 
@@ -29,9 +26,5 @@ class Solution(object):
         return power_sum
 
 
-def main():
-    print(Solution(POWER).solve())
-
-
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    print(ProjectEulerProblem016(POWER).solve())
