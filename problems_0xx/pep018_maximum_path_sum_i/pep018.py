@@ -1,10 +1,8 @@
-#!/usr/bin/env python3
-
 """
-PE-018: Maximum path sum I
---------------------------
+PEP-018: Maximum path sum I
+---------------------------
 
-Solution for Project Euler Problem 18 (https://projecteuler.net/problem=18).
+Solution for Project Euler problem 18 (https://projecteuler.net/problem=18).
 
 By starting at the top of the triangle below and moving to adjacent numbers on
 the row below, the maximum total from top to bottom is 23.
@@ -46,11 +44,9 @@ triangle containing one-hundred rows; it cannot be solved by brute force, and
 requires a clever method! ;o)
 """
 
-
 import csv
 
-
-INPUT_FILENAME = 'triangle_big.txt'
+INPUT_FILENAME = "triangle_big.txt"
 
 
 class TriangleBottomUp(object):
@@ -130,7 +126,7 @@ class TriangleBottomUp(object):
         self._data[self._y][self._x] = str(value)
 
 
-class Solution(object):
+class ProjectEulerProblem018(object):
     def __init__(self, filename):
         self._filename = filename
 
@@ -157,9 +153,5 @@ class Solution(object):
         return triangle.get_current()
 
 
-def main():
-    print(Solution(INPUT_FILENAME).solve())
-
-
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    print(ProjectEulerProblem018(INPUT_FILENAME).solve())
