@@ -1,10 +1,8 @@
-#!/usr/bin/env python3
-
 """
-PE-021: Amicable numbers
-------------------------
+PEP-021: Amicable numbers
+-------------------------
 
-Solution for Project Euler Problem 21 (https://projecteuler.net/problem=21).
+Solution for Project Euler problem 21 (https://projecteuler.net/problem=21).
 
 Let :math:`d(n)` be defined as the sum of proper divisors of :math:`n` (numbers
 less than :math:`n` which divide evenly into :math:`n`). If :math:`d(a) = b` and
@@ -18,9 +16,7 @@ and 110; therefore :math:`d(220) = 284`. The proper divisors of 284 are 1, 2, 4,
 Evaluate the sum of all the amicable numbers under 10000.
 """
 
-
 import math
-
 
 LIMIT = 10000
 
@@ -29,6 +25,7 @@ class Divisors(object):
     """
     Proper divisors for numbers.
     """
+
     def __init__(self, number=1):
         """
         Setup Divisors object and load first number.
@@ -64,7 +61,7 @@ class Divisors(object):
         print(self._divisors)
 
 
-class Solution(object):
+class ProjectEulerProblem021(object):
     def __init__(self, limit):
         self._limit = limit
 
@@ -92,9 +89,5 @@ class Solution(object):
         return sum(amicable)
 
 
-def main():
-    print(Solution(LIMIT).solve())
-
-
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    print(ProjectEulerProblem021(LIMIT).solve())

@@ -1,20 +1,21 @@
 import unittest
 
 from parameterized import parameterized
-from pe021_amicable_numbers.pe021 import Solution
+
+from problems_0xx.pep021_amicable_numbers.pep021 import ProjectEulerProblem021
 
 
-class SolutionTest(unittest.TestCase):
+class ProjectEulerProblem021Test(unittest.TestCase):
     @parameterized.expand([
         [10000, 31626]])
     def test_solve(self, limit, expected_sum):
-        returned_sum = Solution(limit).solve()
+        actual_sum = ProjectEulerProblem021(limit).solve()
         self.assertEqual(
-            returned_sum,
             expected_sum,
-            'The result should be %d but is %d.'
-            % (expected_sum, returned_sum))
+            actual_sum,
+            "Failed for limit %d."
+            % limit)
 
 
-if __name__ == '__main__':
-    pass
+if __name__ == "__main__":
+    unittest.main()
