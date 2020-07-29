@@ -1,20 +1,20 @@
 import unittest
 
 from parameterized import parameterized
-from pe022_names_scores.pe022 import Solution
+
+from problems_0xx.pep022_names_scores.pep022 import ProjectEulerProblem022
 
 
-class SolutionTest(unittest.TestCase):
+class ProjectEulerProblem022Test(unittest.TestCase):
     @parameterized.expand([
-        ['p022_names.txt', 871198282]])
+        ["p022_names.txt", 871198282]])
     def test_solve(self, input_filename, expected_total):
-        returned_total = Solution(input_filename).solve()
+        actual_total = ProjectEulerProblem022(input_filename).solve()
         self.assertEqual(
-            returned_total,
             expected_total,
-            'The result should be %d but is %d.'
-            % (expected_total, returned_total))
+            actual_total,
+            "Actual and expected totals do not match.")
 
 
-if __name__ == '__main__':
-    pass
+if __name__ == "__main__":
+    unittest.main()
