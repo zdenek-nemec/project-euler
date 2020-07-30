@@ -13,7 +13,7 @@ class ProjectEulerProblem021Test(unittest.TestCase):
         self.assertEqual(
             expected_sum,
             actual_sum,
-            "Failed for limit %d."
+            "Failed for the limit %d."
             % limit)
 
 

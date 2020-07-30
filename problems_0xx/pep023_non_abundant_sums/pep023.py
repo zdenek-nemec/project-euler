@@ -1,10 +1,8 @@
-#!/usr/bin/env python3
-
 """
-PE-023: Non-abundant sums
--------------------------
+PEP-023: Non-abundant sums
+--------------------------
 
-Solution for Project Euler Problem 23 (https://projecteuler.net/problem=23).
+Solution for Project Euler problem 23 (https://projecteuler.net/problem=23).
 
 A perfect number is a number for which the sum of its proper divisors is exactly
 equal to the number. For example, the sum of the proper divisors of 28 would be
@@ -27,10 +25,8 @@ two abundant numbers.
 .. warning:: Open
 """
 
-
 import math
 import time
-
 
 # LIMIT = 28123
 LIMIT = 3000
@@ -48,7 +44,7 @@ class Divisors(object):
         return sorted(divisors)
 
 
-class SolutionA(object):
+class ProjectEulerProblem023A(object):
     """
     Make a list of abundant numbers. Go through all integers below the limit,
     subtract abundant number and check whether the result is abundant or not.
@@ -56,15 +52,18 @@ class SolutionA(object):
 
     .. note:: Too slow
     """
-    @staticmethod
-    def solve(limit):
+
+    def __init__(self, limit):
+        self._limit = limit
+
+    def solve(self):
         abundant_list = []
-        for number in range(1, limit + 1):
+        for number in range(1, self._limit + 1):
             divisors = Divisors().get_divisors(number)
             if sum(divisors) > number:
                 abundant_list.append(number)
         total_sum = 0
-        for number in range(1, limit + 1):
+        for number in range(1, self._limit + 1):
             non_abundant_sum = True
             for abundant in abundant_list:
                 if number - abundant in abundant_list:
@@ -77,17 +76,20 @@ class SolutionA(object):
         return total_sum
 
 
-class SolutionB(object):
+class ProjectEulerProblem023B(object):
     """
     Make a list of abundant numbers. Calculate all abundant sums. Go through all
     integers below the limit and add all non-abundant to the total.
 
     .. note:: Too slow
     """
-    @staticmethod
-    def solve(limit):
+
+    def __init__(self, limit):
+        self._limit = limit
+
+    def solve(self):
         abundant_list = []
-        for number in range(1, limit + 1):
+        for number in range(1, self._limit + 1):
             divisors = Divisors().get_divisors(number)
             if sum(divisors) > number:
                 abundant_list.append(number)
@@ -95,38 +97,23 @@ class SolutionB(object):
         for index_a in range(0, len(abundant_list)):
             for index_b in range(index_a, len(abundant_list)):
                 abundant_sum = abundant_list[index_a] + abundant_list[index_b]
-                if abundant_sum > limit:
+                if abundant_sum > self._limit:
                     break
                 if abundant_sum not in abundant_sum_list:
                     abundant_sum_list.append(abundant_sum)
         total_sum = 0
-        for number in range(1, limit + 1):
+        for number in range(1, self._limit + 1):
             if number not in abundant_sum_list:
                 total_sum += number
         return total_sum
 
 
-class Solution(object):
-    def __init__(self, limit):
-        self._limit = limit
-
-    def solve(self):
-        start_timestamp = time.time()
-        print('A:', SolutionA().solve(self._limit))
-        end_timestamp = time.time()
-        print('%.2f' % (end_timestamp - start_timestamp))
-
-        start_timestamp = time.time()
-        print('B:', SolutionB().solve(self._limit))
-        end_timestamp = time.time()
-        print('%.2f' % (end_timestamp - start_timestamp))
-
-        return 0
-
-
-def main():
-    print(Solution(LIMIT).solve())
-
-
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    start_timestamp = time.time()
+    result = ProjectEulerProblem023A(LIMIT).solve()
+    end_timestamp = time.time()
+    print("A: %d, runtime %.2f s" % (result, (end_timestamp - start_timestamp)))
+    start_timestamp = time.time()
+    result = ProjectEulerProblem023B(LIMIT).solve()
+    end_timestamp = time.time()
+    print("B: %d, runtime %.2f s" % (result, (end_timestamp - start_timestamp)))

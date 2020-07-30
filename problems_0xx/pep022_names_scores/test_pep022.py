@@ -13,7 +13,7 @@ class ProjectEulerProblem022Test(unittest.TestCase):
         self.assertEqual(
             expected_total,
             actual_total,
-            "Actual and expected totals do not match.")
+            "Expected and actual totals do not match.")
 
 
 if __name__ == "__main__":

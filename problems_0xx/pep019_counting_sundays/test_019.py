@@ -16,9 +16,9 @@ class ProjectEulerProblem019Test(unittest.TestCase):
     def test_solve(self, seed, search, start, end, expected_number):
         actual_number = ProjectEulerProblem019(seed, search, start, end).solve()
         self.assertEqual(
-            actual_number,
             expected_number,
-            "Actual and expected number does not match.")
+            actual_number,
+            "Expected and actual numbers do not match.")
 
 
 if __name__ == "__main__":
