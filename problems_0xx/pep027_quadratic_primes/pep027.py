@@ -1,10 +1,8 @@
-#!/usr/bin/env python3
-
 """
-PE-027: Quadratic primes
-------------------------
+PEP-027: Quadratic primes
+-------------------------
 
-Solution for Project Euler Problem 27 (https://projecteuler.net/problem=27).
+Solution for Project Euler problem 27 (https://projecteuler.net/problem=27).
 
 Euler discovered the remarkable quadratic formula:
 
@@ -35,15 +33,11 @@ expression that produces the maximum number of primes for consecutive values of
 """
 
 
-class Solution(object):
+class ProjectEulerProblem027(object):
     @staticmethod
     def solve():
         return 0
 
 
-def main():
-    print(Solution().solve())
-
-
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    print(ProjectEulerProblem027().solve())
