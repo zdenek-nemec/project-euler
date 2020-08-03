@@ -1,10 +1,8 @@
-#!/usr/bin/env python3
-
 """
-PE-030: Digit fifth powers
---------------------------
+PEP-030: Digit fifth powers
+---------------------------
 
-Solution for Project Euler Problem 30 (https://projecteuler.net/problem=30).
+Solution for Project Euler problem 30 (https://projecteuler.net/problem=30).
 
 Surprisingly there are only three numbers that can be written as the sum of
 fourth powers of their digits:
@@ -21,7 +19,7 @@ fourth powers of their digits:
 
 As :math:`1 = 1^4` is not a sum it is not included.
 
-The sum of these numbers is :math:`1637 + 8208 + 9474 = 19316`.
+The sum of these numbers is :math:`1634 + 8208 + 9474 = 19316`.
 
 Find the sum of all the numbers that can be written as the sum of fifth powers
 of their digits.
@@ -30,15 +28,11 @@ of their digits.
 """
 
 
-class Solution(object):
+class ProjectEulerProblem(object):
     @staticmethod
     def solve():
         return 0
 
 
-def main():
-    print(Solution().solve())
-
-
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    print(ProjectEulerProblem().solve())
