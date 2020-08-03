@@ -1,10 +1,8 @@
-#!/usr/bin/env python3
-
 """
-PE-028: Number spiral diagonals
--------------------------------
+PEP-028: Number spiral diagonals
+--------------------------------
 
-Solution for Project Euler Problem 28 (https://projecteuler.net/problem=28).
+Solution for Project Euler problem 28 (https://projecteuler.net/problem=28).
 
 Starting with the number 1 and moving to the right in a clockwise direction a 5
 by 5 spiral is formed as follows:
@@ -28,15 +26,11 @@ in the same way?
 """
 
 
-class Solution(object):
+class ProjectEulerProblem(object):
     @staticmethod
     def solve():
         return 0
 
 
-def main():
-    print(Solution().solve())
-
-
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    print(ProjectEulerProblem().solve())
