@@ -1,15 +1,13 @@
-#!/usr/bin/env python3
-
 """
-PE-158: Exploring strings for which only one character comes lexicographically \
+PEP-158: Exploring strings for which only one character comes lexicographically \
 after its neighbour to the left
--------------------------------------------------------------------------------\
+--------------------------------------------------------------------------------\
 -------------------------------
 
-Solution for Project Euler Problem 158 (https://projecteuler.net/problem=158).
+Solution for Project Euler problem 158 (https://projecteuler.net/problem=158).
 
 Taking three different letters from the 26 letters of the alphabet, character
-strings of length three can be formed. Examples are 'abc', hat' and 'zyx'. When
+strings of length three can be formed. Examples are 'abc', 'hat' and 'zyx'. When
 we study these three examples we see that for 'abc' two characters come
 lexicographically after its neighbour to the left. For 'hat' there is exactly
 one character that comes lexicographically after its neighbour to the left. For
@@ -28,15 +26,11 @@ What is the maximum value of :math:`\\text{p}(n)`?
 """
 
 
-class Solution(object):
+class ProjectEulerProblem158(object):
     @staticmethod
     def solve():
         return 0
 
 
-def main():
-    print(Solution().solve())
-
-
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    print(ProjectEulerProblem158().solve())
