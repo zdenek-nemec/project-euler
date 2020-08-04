@@ -34,8 +34,7 @@ expression that produces the maximum number of primes for consecutive values of
 
 
 class ProjectEulerProblem027(object):
-    @staticmethod
-    def solve():
+    def solve(self):
         return 0
 
 

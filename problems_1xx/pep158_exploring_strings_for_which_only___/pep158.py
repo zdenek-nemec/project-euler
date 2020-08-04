@@ -27,8 +27,7 @@ What is the maximum value of :math:`\\text{p}(n)`?
 
 
 class ProjectEulerProblem158(object):
-    @staticmethod
-    def solve():
+    def solve(self):
         return 0
 
 

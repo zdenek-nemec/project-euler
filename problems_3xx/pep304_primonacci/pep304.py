@@ -1,10 +1,8 @@
-#!/usr/bin/env python3
-
 """
-PE-304: Primonacci
-------------------
+PEP-304: Primonacci
+-------------------
 
-Solution for Project Euler Problem 304 (https://projecteuler.net/problem=304).
+Solution for Project Euler problem 304 (https://projecteuler.net/problem=304).
 
 For any positive integer :math:`n` the function :math:`\\text{next_prime}(n)`
 returns the smallest prime :math:`p` such that :math:`p > n`.
@@ -25,15 +23,10 @@ Find :math:`\sum b(n)` for :math:`1 \leq n \leq 100000`. Give your answer
 """
 
 
-class Solution(object):
-    @staticmethod
-    def solve():
+class ProjectEulerProblem304(object):
+    def solve(self):
         return 0
 
 
-def main():
-    print(Solution().solve())
-
-
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    print(ProjectEulerProblem304().solve())

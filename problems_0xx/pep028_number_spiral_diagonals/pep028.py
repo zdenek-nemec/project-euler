@@ -26,11 +26,10 @@ in the same way?
 """
 
 
-class ProjectEulerProblem(object):
-    @staticmethod
-    def solve():
+class ProjectEulerProblem028(object):
+    def solve(self):
         return 0
 
 
 if __name__ == "__main__":
-    print(ProjectEulerProblem().solve())
+    print(ProjectEulerProblem028().solve())

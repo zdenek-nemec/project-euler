@@ -28,11 +28,10 @@ of their digits.
 """
 
 
-class ProjectEulerProblem(object):
-    @staticmethod
-    def solve():
+class ProjectEulerProblem030(object):
+    def solve(self):
         return 0
 
 
 if __name__ == "__main__":
-    print(ProjectEulerProblem().solve())
+    print(ProjectEulerProblem030().solve())

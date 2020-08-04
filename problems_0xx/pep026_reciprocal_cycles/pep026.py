@@ -39,11 +39,10 @@ recurring cycle in its decimal fraction part.
 """
 
 
-class ProjectEulerProblem(object):
-    @staticmethod
-    def solve():
+class ProjectEulerProblem026(object):
+    def solve(self):
         return 0
 
 
 if __name__ == "__main__":
-    print(ProjectEulerProblem().solve())
+    print(ProjectEulerProblem026().solve())

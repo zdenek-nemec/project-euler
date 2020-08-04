@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Create Sphinx documentation for Project Euler
 ---------------------------------------------
