@@ -1,10 +1,8 @@
-#!/usr/bin/env python3
-
 """
-PE-014: Longest Collatz sequence
---------------------------------
+PEP-014: Longest Collatz sequence
+---------------------------------
 
-Solution for Project Euler Problem 14 (https://projecteuler.net/problem=14).
+Solution for Project Euler problem 14 (https://projecteuler.net/problem=14).
 
 The following iterative sequence is defined for the set of positive integers:
 
@@ -38,11 +36,10 @@ Which starting number, under one million, produces the longest chain?
 **NOTE**: Once the chain starts the terms are allowed to go above one million.
 """
 
-
 LIMIT = 1000000
 
 
-class Solution(object):
+class ProjectEulerProblem014(object):
     def __init__(self, limit):
         self._limit = limit
 
@@ -55,7 +52,7 @@ class Solution(object):
         collatz = {}
         for i in range(1, self._limit):
             if i % 2 == 0:
-                collatz[i] = collatz[i/2] + 1
+                collatz[i] = collatz[i / 2] + 1
             else:
                 sequence = [i]
                 last = i
@@ -75,9 +72,5 @@ class Solution(object):
         return number
 
 
-def main():
-    print(Solution(LIMIT).solve())
-
-
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    print(ProjectEulerProblem014(LIMIT).solve())

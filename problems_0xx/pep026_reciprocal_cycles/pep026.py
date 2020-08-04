@@ -1,10 +1,8 @@
-#!/usr/bin/env python3
-
 """
-PE-026: Reciprocal cycles
--------------------------
+PEP-026: Reciprocal cycles
+--------------------------
 
-Solution for Project Euler Problem 26 (https://projecteuler.net/problem=26).
+Solution for Project Euler problem 26 (https://projecteuler.net/problem=26).
 
 A unit fraction contains 1 in the numerator. The decimal representation of the
 unit fractions with denominators 2 to 10 are given:
@@ -41,15 +39,10 @@ recurring cycle in its decimal fraction part.
 """
 
 
-class Solution(object):
-    @staticmethod
-    def solve():
+class ProjectEulerProblem026(object):
+    def solve(self):
         return 0
 
 
-def main():
-    print(Solution().solve())
-
-
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    print(ProjectEulerProblem026().solve())

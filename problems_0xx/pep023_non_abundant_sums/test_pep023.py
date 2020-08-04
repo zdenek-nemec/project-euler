@@ -2,19 +2,32 @@ import unittest
 
 from parameterized import parameterized
 
-from pe023_non_abundant_sums.pe023 import Solution
-from pe023_non_abundant_sums.pe023 import Divisors
+from problems_0xx.pep023_non_abundant_sums.pep023 import Divisors
+from problems_0xx.pep023_non_abundant_sums.pep023 import ProjectEulerProblem023A
+from problems_0xx.pep023_non_abundant_sums.pep023 import ProjectEulerProblem023B
 
 
-class SolutionTest(unittest.TestCase):
+class ProjectEulerProblem023ATest(unittest.TestCase):
     @parameterized.expand([
-        [28123, 0]])
+        [3000, 989657]])
     def test_solve(self, limit, expected_sum):
-        actual_sum = Solution(limit).solve()
+        actual_sum = ProjectEulerProblem023A(limit).solve()
         self.assertEqual(
             expected_sum,
             actual_sum,
-            'Failed for the limit %d.'
+            "Failed for the limit %d."
+            % limit)
+
+
+class ProjectEulerProblem023BTest(unittest.TestCase):
+    @parameterized.expand([
+        [3000, 989657]])
+    def test_solve(self, limit, expected_sum):
+        actual_sum = ProjectEulerProblem023B(limit).solve()
+        self.assertEqual(
+            expected_sum,
+            actual_sum,
+            "Failed for the limit %d."
             % limit)
 
 
@@ -30,9 +43,9 @@ class DivisorsTest(unittest.TestCase):
         self.assertEqual(
             expected_divisors,
             actual_divisors,
-            'Failed for the number %d.'
+            "Failed for the number %d."
             % number)
 
 
-if __name__ == '__main__':
-    pass
+if __name__ == "__main__":
+    unittest.main()

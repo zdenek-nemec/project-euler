@@ -1,10 +1,8 @@
-#!/usr/bin/env python3
-
 """
-PE-011: Largest product in a grid
----------------------------------
+PEP-011: Largest product in a grid
+----------------------------------
 
-Solution for Project Euler Problem 11 (https://projecteuler.net/problem=11).
+Solution for Project Euler problem 11 (https://projecteuler.net/problem=11).
 
 In the :math:`20 \\times 20` grid below, four numbers along a diagonal line have
 been marked in red.
@@ -37,23 +35,21 @@ What is the greatest product of four adjacent numbers in the same direction (up,
 down, left, right, or diagonally) in the :math:`20 \\times 20` grid?
 """
 
-
 import csv
 
-
-INPUT_FILENAME = 'numbers.csv'
+INPUT_FILENAME = "numbers.csv"
 SEQUENCE = 4
 
 
-class Solution(object):
+class ProjectEulerProblem011(object):
     def __init__(self, input_filename, sequence):
         self._input_filename = input_filename
         self._sequence = sequence
 
     def solve(self):
         numbers = []
-        with open(self._input_filename, 'r') as csv_file:
-            reader = csv.reader(csv_file, delimiter=' ')
+        with open(self._input_filename, "r") as csv_file:
+            reader = csv.reader(csv_file, delimiter=" ")
             for row in reader:
                 numbers.append(list(map(int, row)))
 
@@ -69,7 +65,7 @@ class Solution(object):
                     if x + i >= columns:
                         product = 0
                         break
-                    product *= numbers[y][x+i]
+                    product *= numbers[y][x + i]
                 if product > max_product:
                     max_product = product
 
@@ -81,7 +77,7 @@ class Solution(object):
                     if y + i >= rows:
                         product = 0
                         break
-                    product *= numbers[y+i][x]
+                    product *= numbers[y + i][x]
                 if product > max_product:
                     max_product = product
 
@@ -93,7 +89,7 @@ class Solution(object):
                     if x + i >= columns or y + i >= rows:
                         product = 0
                         break
-                    product *= numbers[y+i][x+i]
+                    product *= numbers[y + i][x + i]
                 if product > max_product:
                     max_product = product
 
@@ -105,16 +101,12 @@ class Solution(object):
                     if x - i < 0 or y + i >= rows:
                         product = 0
                         break
-                    product *= numbers[y+i][x-i]
+                    product *= numbers[y + i][x - i]
                 if product > max_product:
                     max_product = product
 
         return max_product
 
 
-def main():
-    print(Solution(INPUT_FILENAME, SEQUENCE).solve())
-
-
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    print(ProjectEulerProblem011(INPUT_FILENAME, SEQUENCE).solve())

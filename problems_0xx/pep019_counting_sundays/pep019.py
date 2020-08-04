@@ -1,10 +1,8 @@
-#!/usr/bin/env python3
-
 """
-PE-019: Counting Sundays
-------------------------
+PEP-019: Counting Sundays
+-------------------------
 
-Solution for Project Euler Problem 19 (https://projecteuler.net/problem=19).
+Solution for Project Euler problem 19 (https://projecteuler.net/problem=19).
 
 You are given the following information, but you may prefer to do some research
 for yourself.
@@ -20,9 +18,8 @@ How many Sundays fell on the first of the month during the twentieth century
 (1 Jan 1901 to 31 Dec 2000)?
 """
 
-
-SEED = (1900, 1, 1, 'Monday')
-SEARCH = (0, 0, 1, 'Sunday')
+SEED = (1900, 1, 1, "Monday")
+SEARCH = (0, 0, 1, "Sunday")
 START = (1901, 1, 1)
 END = (2000, 12, 31)
 
@@ -30,13 +27,13 @@ END = (2000, 12, 31)
 class Calendar(object):
     def __init__(self, seed, end):
         self._names = [
-            'Monday',
-            'Tuesday',
-            'Wednesday',
-            'Thursday',
-            'Friday',
-            'Saturday',
-            'Sunday']
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"]
         self._data = [seed]
         self._extend_to(end)
 
@@ -123,7 +120,7 @@ class Calendar(object):
         """
         i = 0
         for entry in self._data:
-            print(i, ':', entry)
+            print(i, ":", entry)
             i += 1
 
     def search(self, search, start, end):
@@ -144,7 +141,7 @@ class Calendar(object):
         return match
 
 
-class Solution(object):
+class ProjectEulerProblem019(object):
     def __init__(self, seed, search, start, end):
         self._seed = seed
         self._search = search
@@ -160,9 +157,5 @@ class Solution(object):
         return len(calendar.search(self._search, self._start, self._end))
 
 
-def main():
-    print(Solution(SEED, SEARCH, START, END).solve())
-
-
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    print(ProjectEulerProblem019(SEED, SEARCH, START, END).solve())

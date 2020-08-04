@@ -1,10 +1,8 @@
-#!/usr/bin/env python3
-
 """
-PE-358: Cyclic numbers
-----------------------
+PEP-358: Cyclic numbers
+-----------------------
 
-Solution for Project Euler Problem 358 (https://projecteuler.net/problem=358).
+Solution for Project Euler problem 358 (https://projecteuler.net/problem=358).
 
 A **cyclic number** with :math:`n` digits has a very interesting property:
 
@@ -56,15 +54,10 @@ sum of all its digits.
 """
 
 
-class Solution(object):
-    @staticmethod
-    def solve():
+class ProjectEulerProblem358(object):
+    def solve(self):
         return 0
 
 
-def main():
-    print(Solution().solve())
-
-
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    print(ProjectEulerProblem358().solve())

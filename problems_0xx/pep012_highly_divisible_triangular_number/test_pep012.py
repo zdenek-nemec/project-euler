@@ -1,21 +1,22 @@
 import unittest
 
 from parameterized import parameterized
-from pe012_highly_divisible_triangular_number.pe012 import Solution
+
+from problems_0xx.pep012_highly_divisible_triangular_number.pep012 import ProjectEulerProblem012
 
 
-class SolutionTest(unittest.TestCase):
+class ProjectEulerProblem012Test(unittest.TestCase):
     @parameterized.expand([
         [5, 28],
         [500, 76576500]])
     def test_solve(self, divisors_limit, expected_triangle_number):
-        returned_triangle_number = Solution(divisors_limit).solve()
+        actual_triangle_number = ProjectEulerProblem012(divisors_limit).solve()
         self.assertEqual(
-            returned_triangle_number,
             expected_triangle_number,
-            'The result should be %d but is %d.'
-            % (expected_triangle_number, returned_triangle_number))
+            actual_triangle_number,
+            "Failed for limit of %d divisors."
+            % divisors_limit)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     pass

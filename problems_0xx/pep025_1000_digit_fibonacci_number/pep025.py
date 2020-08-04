@@ -1,8 +1,6 @@
-#!/usr/bin/env python3
-
 """
-PE-025: 1000-digit Fibonacci number
------------------------------------
+PEP-025: 1000-digit Fibonacci number
+------------------------------------
 
 Solution for Project Euler problem 25 (https://projecteuler.net/problem=25).
 
@@ -47,7 +45,6 @@ What is the index of the first term in the Fibonacci sequence to contain 1000
 digits?
 """
 
-
 DIGITS = 1000
 START = [1, 1]
 
@@ -70,7 +67,7 @@ class Fibonacci(object):
         return len(self._series)
 
 
-class Solution(object):
+class ProjectEulerProblem025(object):
     def __init__(self, digits, start):
         self._digits = digits
         self._start = start
@@ -82,9 +79,5 @@ class Solution(object):
         return fibonacci.get_length()
 
 
-def main():
-    print(Solution(DIGITS, START).solve())
-
-
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    print(ProjectEulerProblem025(DIGITS, START).solve())

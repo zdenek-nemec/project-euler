@@ -1,10 +1,8 @@
-#!/usr/bin/env python3
-
 """
-PE-375: Minimum of subsequences
--------------------------------
+PEP-375: Minimum of subsequences
+--------------------------------
 
-Solution for Project Euler Problem 375 (https://projecteuler.net/problem=375).
+Solution for Project Euler problem 375 (https://projecteuler.net/problem=375).
 
 Let :math:`S_{n}` be an integer sequence produced with the following
 pseudo-random number generator:
@@ -31,15 +29,10 @@ Find :math:`M(2 \\ 000 \\ 000 \\ 000)`.
 """
 
 
-class Solution(object):
-    @staticmethod
-    def solve():
+class ProjectEulerProblem375(object):
+    def solve(self):
         return 0
 
 
-def main():
-    print(Solution().solve())
-
-
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    print(ProjectEulerProblem375().solve())

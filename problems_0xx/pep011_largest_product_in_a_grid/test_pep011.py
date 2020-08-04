@@ -1,20 +1,20 @@
 import unittest
 
 from parameterized import parameterized
-from pe011_largest_product_in_a_grid.pe011 import Solution
+
+from problems_0xx.pep011_largest_product_in_a_grid.pep011 import ProjectEulerProblem011
 
 
-class SolutionTest(unittest.TestCase):
+class ProjectEulerProblem011Test(unittest.TestCase):
     @parameterized.expand([
-        ['numbers.csv', 4, 70600674]])
+        ["numbers.csv", 4, 70600674]])
     def test_solve(self, input_filename, sequence, expected_product):
-        returned_product = Solution(input_filename, sequence).solve()
+        actual_product = ProjectEulerProblem011(input_filename, sequence).solve()
         self.assertEqual(
-            returned_product,
             expected_product,
-            'The result should be %d but is %d.'
-            % (expected_product, returned_product))
+            actual_product,
+            "Actual and expected products do not match.")
 
 
-if __name__ == '__main__':
-    pass
+if __name__ == "__main__":
+    unittest.main()

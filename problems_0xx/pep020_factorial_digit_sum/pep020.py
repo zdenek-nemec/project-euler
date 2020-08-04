@@ -1,10 +1,8 @@
-#!/usr/bin/env python3
-
 """
-PE-020: Factorial digit sum
----------------------------
+PEP-020: Factorial digit sum
+----------------------------
 
-Solution for Project Euler Problem 20 (https://projecteuler.net/problem=20).
+Solution for Project Euler problem 20 (https://projecteuler.net/problem=20).
 
 :math:`n!` means
 :math:`n \\times (n - 1) \\times ... \\times 3 \\times 2 \\times 1`
@@ -17,11 +15,10 @@ For example,
 Find the sum of the digits in the number :math:`100!`
 """
 
-
 NUMBER = 100
 
 
-class Solution(object):
+class ProjectEulerProblem020(object):
     def __init__(self, number):
         self._number = number
 
@@ -39,9 +36,5 @@ class Solution(object):
         return factorial_sum
 
 
-def main():
-    print(Solution(NUMBER).solve())
-
-
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    print(ProjectEulerProblem020(NUMBER).solve())

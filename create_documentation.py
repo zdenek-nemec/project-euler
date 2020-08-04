@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Create Sphinx documentation for Project Euler
 ---------------------------------------------
@@ -15,6 +13,26 @@ MODULES_PATH = "./_modules"
 
 def create_modules():
     for subdirectory in next(os.walk("./problems_0xx"))[1]:
+        filename = subdirectory[0:6] + ".rst"
+        anchor = ".. _pep%03d: \n\n" % (int(subdirectory[3:6]))
+        content = (anchor
+            + ".. automodule:: " + subdirectory[0:6] + "\n"
+            + "    :members:\n"
+            + "    :undoc-members:\n"
+            + "    :private-members:\n\n")
+        with open(MODULES_PATH + "/" + filename, "w") as f:
+            f.write(content)
+    for subdirectory in next(os.walk("./problems_1xx"))[1]:
+        filename = subdirectory[0:6] + ".rst"
+        anchor = ".. _pep%03d: \n\n" % (int(subdirectory[3:6]))
+        content = (anchor
+            + ".. automodule:: " + subdirectory[0:6] + "\n"
+            + "    :members:\n"
+            + "    :undoc-members:\n"
+            + "    :private-members:\n\n")
+        with open(MODULES_PATH + "/" + filename, "w") as f:
+            f.write(content)
+    for subdirectory in next(os.walk("./problems_3xx"))[1]:
         filename = subdirectory[0:6] + ".rst"
         anchor = ".. _pep%03d: \n\n" % (int(subdirectory[3:6]))
         content = (anchor
